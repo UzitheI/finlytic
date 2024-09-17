@@ -1,2 +1,0 @@
-# finlytic
-Everything for finlytic
