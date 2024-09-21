@@ -1,0 +1,1825 @@
+*{
+    padding: 0px;
+    margin:0px;
+    box-sizing:border-box;
+    font-family: helvetica;
+}
+
+body{
+    background: #f7f6f6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.wrapper{
+    padding-left: 100px;
+    padding-right: 100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+h3{
+    font-size: 22px;
+}
+
+h5{
+    font-size: 17px;
+    color: #333;
+    line-height: 22px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+p{
+    font-size: 15px;
+    color: #444;
+    line-height: px;
+}
+
+a{
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.index-page-header {
+    background-image: url("images/bg.jpg");
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-nav{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    background: #fff;
+    height: 75px;
+}
+
+
+
+.middle-nav ul li{
+    display: inline-block;
+    padding-left: 20px;
+} 
+
+.post-ad a{
+    background: #fbb13d;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.post-ad a:hover{
+    background: #d68502 ;
+}
+
+#logo{
+    width: 140px;
+}
+
+.mobile-icon{
+    display:none;
+}
+
+/*bread crumb*/
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    border-bottom: 1px solid #bdbdbd;
+    margin-bottom: 20px;
+  }
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 13px;
+  }
+  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+  }
+  ul.breadcrumb li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    font-size: 13px;
+  }
+  ul.breadcrumb li a:hover {
+    color: #333;
+    text-decoration: underline;
+  }
+  ul.breadcrumb li:last-child{
+      font-size: 13px;
+      color: #333 ;
+      font-weight: 600;
+  }
+
+/*banner starts*/
+
+.banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner h1{
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 58px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+#home-form{
+    display: flex;
+}
+
+#location{
+    padding: 15px 10px;
+    font-size: 15px;
+    text-transform: capitalize;
+    border-radius: 10px 0px 0px 10px;
+    border: none;
+}
+
+
+select{
+    outline: none;
+    border: none;
+    width: 97%;
+    padding: 0px 10px;
+    color: #444;
+    font-weight: 600;
+}
+
+.select-heading{
+    color: #666;
+    font-size: 13px;
+    padding-left: 15px;
+}
+
+.min-price, .max-price, .type{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: #fff;
+    width: 120px;
+    height: 60px;
+    margin-left: 5px;
+
+}
+
+input:focus{
+    outline: none;
+}
+
+button{
+    padding: 15px 10px;
+    font-size: 15px;
+    text-transform: capitalize;
+    border-radius: 0px 10px 10px 0px;
+    border: none; 
+    background: #fbb13d;
+    width: 120px;
+    height: 60px;
+    margin-left: 5px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:focus{
+    outline: none;
+}
+
+button:hover{
+    background:#d68502;
+}
+
+/*---------------Result starts------------*/
+
+.results{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+#result-option{
+    width: 150px;
+    background: #fff;
+    border: 1px solid #666;
+}
+
+.show-result{
+    color: #555;
+}
+
+.sort-by{
+    display: flex;
+    align-items: center;
+}
+
+.sort-text{
+    padding-right: 10px;
+    width: 50%;
+}
+
+/*main room starts*/
+
+.main-room-container{
+    display: flex;
+}
+
+.main-rooms{
+    display: flex;
+    width: 70%;
+    border-bottom:1px solid #66666671;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.room-image{
+    min-width: 200px;
+}
+
+.room-image figure {
+    position: relative;
+    width: 100%;
+    padding-top: 66.66%;
+    overflow: hidden;
+}
+
+.room-image figure a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.room-image figure a img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    object-position: center;
+    width: 50%;
+    height: 100%;
+}
+
+
+
+.room-texts{
+    padding: 0px 10px;
+}
+
+/* room texts*/
+
+.room-title{
+    color: #333;
+    padding: 0px 10px 5px;
+}
+
+.location{
+    color:#666;
+    text-transform: capitalize;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 10px;
+}
+
+.description{
+    color: #333;
+    font-size: 13px;
+    padding: 5px 10px;
+    line-height:22px;
+    max-height:67px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.contact{
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.contact-name, .phone-box, .price-box,.ads-date, .ads-type {
+    display: flex;
+    align-items: flex-start;
+    padding: 5px 10px;
+}
+
+.contact-label, .post-date {
+    text-transform: capitalize;
+    font-size: 13px;
+    color: #333;
+    font-weight: 700;
+}
+
+.person-name, .phone, .date, .price{
+    text-transform: capitalize;
+    font-size: 13px; 
+    font-weight: 500;
+    padding-left: 5px;
+}
+
+
+.advertise{
+    width: 25%;
+    padding-left: 30px;
+}
+
+/*------------------------pagination------------------------------*/
+
+.pagination ul{
+    display:flex;
+    padding: 10px;
+}
+
+.pagination ul{
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination ul li{
+    padding-left: 10px;
+}
+
+.arrow-button{
+    font-size: 20px;
+}
+
+
+
+/*----registration----*/
+
+.registration{
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    outline: 0;
+    border: 1px solid #bdbdbd;
+    color: #444;
+}
+
+.registration h3{
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: #333;
+    text-align: center;
+}
+
+.registration-form{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.registration-key{
+    width: 50%;
+    text-transform: capitalize;
+}
+
+.registration-value{
+    width: 50%;
+}
+
+.registration-control{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    outline: 0;
+    border: 1px solid #bdbdbd;
+}
+
+.registration-value option{
+    padding: 10px;
+    border-radius: 5px;
+    outline: 0;
+    border: 1px solid #bdbdbd;  
+}
+
+#registration-button{
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+
+
+
+/*------------room details------------*/
+
+
+/*-------------------------*/
+
+.top-slide{
+    display: flex;
+    margin-bottom:20px;
+}
+
+.cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #000;
+  }
+  
+  
+  /* Six columns side by side */
+  .column {
+
+    flex: 1 1 100px;
+    height: 140px;
+    margin-left:20px;
+    margin-bottom: 20px;
+  
+  }
+  
+  .column img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+  
+.slider-wrapper{
+    margin-bottom: 20px;
+}
+
+  .slider{
+      margin-bottom:20px;
+  }
+  
+  .myslide-parent{
+     background:#d3d3d3; 
+     width: 60%;
+     margin: 0 auto;
+     position: relative;
+     height: 300px;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+      height: 300px;
+  }
+  
+  .mySlides img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+  }
+  
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+  .row{
+    width:39% ;
+    display:flex;
+    flex-wrap: wrap;
+  }
+
+
+  /*-------------------------*/
+
+.room-details{
+    display:flex;
+    justify-content: space-between;
+}
+
+.left-room-details{
+    width:60%;
+    margin-right: 20px;
+}
+
+.right-room-details{
+    width: 40%;
+}
+
+.room-description{
+    border:1px solid #bdbdbd;
+    border-radius: 5px;
+    padding:15px;
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+.room-pricing{
+    border:1px solid #bdbdbd;
+    border-radius: 5px;
+    padding:15px;
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+.room-price-key, .room-price-info{
+    font-size: 15px;
+    color: #444;
+    line-height: 18px;
+    text-transform: capitalize;
+    margin-bottom: 18px;
+}
+
+.room-location{
+    font-size: 13px;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.room-description-texts{
+    line-height: 22px;
+}
+
+.room-price-row{
+    display:flex;
+    justify-content: flex-start;
+}
+
+.room-price-key{
+    width: 50%;
+}
+
+.room-price-info{
+    width:50%;
+}
+
+.room-overview-row{
+    display:flex;
+    justify-content: flex-start;
+}
+
+.room-overview-key{
+    width: 50%;
+}
+
+.room-overview-info{
+    width:50%;
+}
+
+.room-overview{
+    border:1px solid #bdbdbd;
+    border-radius: 5px;
+    padding:15px;
+    margin-bottom: 20px; 
+    background: #fff;
+}
+
+.room-overview-key, .room-overview-info{
+    font-size: 15px;
+    color: #444;
+    line-height: 18px;
+    text-transform: capitalize;
+    margin-bottom: 18px;
+}
+
+
+
+.owner-details-key{
+    width: 50%;
+}
+
+.owner-details-info{
+    width:50%;
+    word-wrap: break-word;
+}
+
+.owner-details{
+    background: #fff;
+    border:1px solid #bdbdbd;
+    border-radius: 5px;
+    padding:15px;
+    margin-bottom: 20px; 
+}
+
+.owner-details-row{
+    display:flex;
+    justify-content: flex-start;
+}
+
+.owner-details-key, .owner-details-info{
+    font-size: 15px;
+    color: #444;
+    line-height: 18px; 
+    text-transform: capitalize;
+    margin-bottom: 18px;
+}
+
+.message{
+    background: #fff;
+    border:1px solid #bdbdbd;
+    border-radius: 5px;
+    padding:15px;
+    margin-bottom: 20px; 
+}
+
+
+
+.form-control{
+    margin-bottom:18px;
+}
+
+.input-control, .textbox-control{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    outline: 0;
+    border: 1px solid #bdbdbd;
+}
+
+input[type=submit]{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    outline: 0;
+    border: 1px solid #bdbdbd;
+    cursor: pointer;
+    background:#fbb13d;
+    color: #fff;
+}
+
+input[type=submit]:hover{
+    background:  #d68502 ;
+    color: #fff;
+}
+
+/*--------terms---------------------------*/
+.terms {
+    background-color: #EAEDF0;
+    width: 100%;
+}
+    
+.policy {
+    background-color:#F6F7F8;
+    width: 90%;
+    margin: 10px auto;
+    padding: 65px;
+}
+.policy li {
+    padding-left: 15px;
+}
+/*-----------------Contact Us Page--------------------------*/
+
+.contact-us-body {
+
+    background-color: #EAEDF0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 18px;
+    text-transform: capitalize;
+    /*margin-bottom: 18px;*/
+}
+
+.feedback-heading{
+    font-size: 13px;
+    color: #555;
+    font-family: Helvetica;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.contact-us-header {
+    text-align: center;
+    background-color: #F6F7F8;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    width: 40%;
+    margin: 40px 0px 20px 0px;
+    padding: 25px;
+}
+
+.speaker-form-header h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.contact-us-form {
+    background-color: #F6F7F8;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+
+    width: 40%;
+    padding: 25px 25px 7px 25px;
+    margin: 0 0 40px 0;
+}
+
+.form-row {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+ .errors {
+    color: #cc0000;
+}
+
+.form-row input[type='email'],
+.form-row input[type='password'],
+.form-row input[type='text'] {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    width: 100%;
+    padding: 7px;
+    font-size: 14px;
+    
+
+}
+
+.form-row label {
+    margin-bottom: 10px;
+    color:#444444;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.form-row textarea {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+
+    min-height: 200px;
+    margin-bottom: 10px;
+    padding: 7px;
+    resize: none;
+}
+
+
+.instructions{
+    color: #999999;
+    font-size: 14px;
+    margin-bottom: 0px; 
+}
+
+/* .form-row .checkbox-label {
+    margin-buttom: 0;
+} */
+
+.form-row button {
+    font-size: 16px;
+    font-weight: bold;
+    height: 40px;
+    width: 50%;
+    margin:0 auto ;
+
+    color: #FFFFFF;
+    background-color: #FBB13D;
+
+    border: none;
+    border-radius: 3px;
+
+    padding: 10px;
+    cursor: pointer;
+}
+
+.form-row button:hover {
+    background-color: #FBC02D;
+}
+
+.form-row button:active {
+    background-color: #FFA726;
+}
+
+/*------------------------New Post Ad Page--------*/
+
+.post-ad-body {
+    color: #5D6063;
+    background-color: #EAEDF0;
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post-ad-header {
+    text-align: center;
+    background-color: #F6F7F8;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+
+    width: 80%;
+    margin: 20px 0;
+    padding: 30px;
+}
+
+.post-ad-header h1 {
+    font-size: 30px;
+}
+
+.post-ad-form {
+    background-color: #F6F7F8;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+
+    width: 80%;
+    padding: 50px;
+    margin: 0 0 20px 0;
+}
+
+.post-ad-form-row {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.post-ad-form-row label {
+    margin-bottom: 10px;
+}
+
+.post-ad-form-row input[type='email'],
+.post-ad-form-row input[type='number'],
+.post-ad-form-row input[type='tel'],
+.post-ad-form-row input[type='text'] {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    width: 100%;
+    padding: 7px;
+    font-size: 14px;
+}
+
+
+
+.post-ad-form-row .errors {
+    color: #cc0000;
+}
+
+.post-ad-form-row textarea {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+
+    min-height: 200px;
+    margin-bottom: 10px;
+    padding: 7px;
+    width: 100%;
+    resize: none;
+
+}
+
+.post-ad-form-row select {
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    /*-webkit-appearance: none;*/
+}
+
+.legacy-form-row {
+    border: none;
+    margin-bottom: 40px;
+}
+
+.legacy-form-row legend {
+    margin-bottom: 15px;
+}
+
+.legacy-form-row .radio-label {
+    display: block;
+    font-size: 14px;
+    padding: 0 20px 0 10px;
+}
+
+.legacy-form-row input[type='radio'] {
+    margin-top: 2px;
+}
+
+.legacy-form-row .radio-label,
+.legacy-form-row input[type='radio'] {
+    float: left;
+}
+
+.post-ad-form-row input[type='file'] {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    padding: 7px;
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.post-ad-form-row button {
+    font-size: 16px;
+    font-weight: bold;
+    height: 40px;
+    width: 100%;
+
+    color: #FFFFFF;
+    background-color: #FBB13D;
+
+    border: none;
+    border-radius: 3px;
+
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+.post-ad-form-row button:hover {
+    background-color: #FBC02D;
+}
+
+.post-ad-form-row button:active {
+    background-color: #FFA726;
+}
+
+/*-------------------------------Login Form -------------------------*/
+
+.login-body {
+    background-color: #EAEDF0;
+    line-height: 1.3;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-header {
+    text-align: center;
+    background-color: #FBB13D;
+    width: 50%;
+    margin: 40px 0 0 0;
+    border-radius: 3px 3px 0px 0px;
+}
+
+.login-header h1{
+    color:#fff;
+    padding: 10px;
+}
+
+.create-account{
+    margin-bottom: 30px;
+}
+
+.create-account u{
+    font-size: 16px;
+}
+
+.create-account u:hover{
+    color: #FBB13D;
+}
+    
+.main-login-form {
+    background-color: #F6F7F8;
+    border: 1px solid #D6D9DC;
+    width: 50%;
+    padding: 20px 50px;
+    margin: 0 0 40px 0;
+    border-radius: 0px 0px 3px 3px;
+}
+
+
+
+.main-login-form .forgotten-password {
+    font-size: 13px;
+    text-align: center;
+}
+
+.main-login-form .login-form-error,
+.main-login-form .reset-email-error {
+    color: #cc0000;
+    margin-bottom: 15px;
+}
+
+.forgotten-password a:hover{
+    color: #FBB13D;
+}
+
+/*---------------------------signup Form ----------------------*/
+.signup-form-row {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.signup-form-row .errors {
+    color: #cc0000;
+}
+
+.signup-form-row input[type='email'],
+.signup-form-row input[type='password'],
+.signup-form-row input[type='tel'],
+.signup-form-row input[type='text'] {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    width: 100%;
+    padding: 7px;
+    font-size: 14px;
+}
+
+.signup-form-row label {
+    margin-bottom: 10px;
+}
+
+.signup-form-row button {
+    font-size: 16px;
+    font-weight: bold;
+    height: 40px;
+    width: 100%;
+
+    color: #FFFFFF;
+    background-color: #FBB13D;
+
+    border: none;
+    border-radius: 3px;
+
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+.signup-form-row button:hover {
+    background-color: #FBC02D;
+}
+
+.signup-form-row button:active {
+    background-color: #FFA726;
+}
+
+/*----------------------account section--------------------------*/
+.account-section{
+    display: grid;
+    grid-template-columns:1fr 2fr ;
+    padding-top: 15px;
+}
+
+.left-account{
+    grid-column: 1/2;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.left-account ul li{
+    list-style: none;
+    border-bottom: 1px solid #bdbdbd;
+    margin-bottom: 10px;
+}
+
+.right-account{
+    grid-column: 2/4;
+    padding: 5px;
+}
+
+.account-items{
+    display:flex;
+    align-items: center;
+    height:50px;
+    background: blue;
+}
+
+.change-password-btn{
+    font-size: 16px;
+    font-weight: bold;
+    height: 40px;
+    width: 50%;
+    color: #FFFFFF;
+    background-color: #FBB13D;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+.ad-room-container{
+    background: #fff;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.ad-room-container .main-rooms{
+    width: 100%;
+    border-bottom: none;
+}
+
+.edit-button{
+    display: flex;
+    justify-content: center;
+}
+
+.e-button, .d-button{
+    background: #fbb13d;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    width:80px;
+    height: 40px;
+}
+
+/*------------------------------footer-----------------------*/
+
+.sprite {
+    width: 20%;
+}
+
+.sprite ul {
+    padding: 0px;
+    margin: 0px;
+    float:right;
+}
+
+.sprite li {
+    float: left;
+    list-style: none;
+    padding: 0;
+}
+
+.icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("images/sprites.png") no-repeat 0 0;
+}
+
+.instagram {
+    background-position: -20px 0;
+    margin-left: 15px;
+}
+
+.gmail {
+    background-position: -40px 0;
+    margin-left: 15px;
+}
+
+footer{
+    display: flex;
+    justify-content:space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #fff;
+    margin-top: auto !important;
+}
+
+.kotha-footer{
+    width: 80%;
+}
+
+.kotha-footer ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.kotha-footer ul li{
+    list-style: none;
+    padding-right: 20px;
+    text-transform: uppercase;
+}
+
+.kotha-footer ul li a{
+    font-size: 13px;
+    text-transform: capitalize;
+}
+
+.kotha-footer ul li a:hover{
+    text-decoration: underline;
+}
+
+.share-button {
+  margin-bottom: 10px;
+}
+
+
+
+/*------- index media query----------*/
+
+
+@media only screen and (max-width:768px){
+    .index-page-header {
+	min-height: 86vh;
+    }
+    .mobile-icon{
+        display: inline-block;
+        font-size: 30px;
+    }
+
+
+    .middle-nav {
+        width:0px;
+        transition:all 0.5s ease-in-out;
+        position:fixed;
+        right:0px;
+        top:75px;
+        background:#000000db;
+        height: 100vh;
+        z-index:1;
+      }
+    
+      #drop-down-list{
+        visibility:hidden;
+        transition:all 0.4s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+    #drop-down-list li{
+        line-height: 50px;
+    }
+
+    #drop-down-list li a{
+        color: #fff;
+    }
+
+    .li-contact{
+        order: 4;
+    }
+
+    .post-ad{
+        order: 3;
+    }
+
+    .li-login{
+        order: 0;
+    }
+
+    .li-register{
+        order:1;
+    }
+
+    .wrapper{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .banner h1{
+        font-size: 50px;
+    }
+
+    .min-price, .max-price, .type{
+        width: 80px;    
+    }
+}
+
+@media only screen and (max-width:675px){
+    
+    #home-form{
+        flex-direction: column;
+        width: 80%;
+    }
+    .index-page-header {
+	min-height: 86vh;
+    }
+
+    #location{
+        border-radius: 0px;
+        height: 60px;
+        border-radius: 5px;
+    }
+
+    .min-price, .max-price, .type{
+        width: 100%; 
+        margin-left: 0px;  
+        margin-top: 10px; 
+        border-radius:5px;
+    }
+
+    #home-form button{
+        margin-left: 0px;
+        margin: 10px auto 0 auto;
+        border-radius: 5px;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:576px){
+    
+    .banner h1{
+        font-size: 40px;
+    }
+    
+    #home-form{
+        flex-direction: column;
+        width: 90%;
+    }
+
+    #location{
+        height: 60px;
+    }
+
+
+
+    .min-price, .max-price, .type{
+        width: 100%; 
+        margin-left: 0px;  
+        margin-top: 25px; 
+    }
+
+    #home-form button{
+        margin-top:25px;
+    }
+
+    .kotha-footer{
+        width: 60%;
+    }
+
+    .kotha-footer ul {
+        flex-direction: column;
+        line-height: 22px;
+    }
+
+    .sprite{
+        width: 40%;
+    }
+
+    .show-result{
+        font-size: 14px;
+    }
+
+    .room-texts{
+        padding: 0px;
+    }
+
+    .room-title, .location, .description, .contact{
+        padding: 0px 0px 5px;
+    }
+
+    .ads-type, .ads-date{
+        padding: 5px 0px;
+    }
+
+    .index-page-header {
+	min-height: 86vh;
+    }
+}
+
+@media only screen and (max-width:443px){
+    .index-page-header {
+	min-height: 86vh;
+    }
+    .wrapper{
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .banner h1{
+        font-size: 30px;;
+    }
+
+    #location{
+        height: 50px;
+    }
+
+    .min-price, .max-price, .type, #home-form button{
+        height:50px; 
+    }
+}
+
+
+/*room-details media query*/
+@media only screen and (max-width:992px){
+    .owner-details-key {
+        width: 50%;
+    }
+
+    .owner-details-info {
+        width: 65%;
+    }
+}
+
+@media only screen and (max-width:768px){
+
+    .main-rooms{
+        width:100%;
+    }
+
+    .advertise{
+        display:none;
+    }
+
+}
+
+@media only screen and (max-width:576px){
+    .main-rooms{
+        flex-direction: column;
+    }
+
+    .room-title{
+        margin-top: 15px;
+    }
+}
+
+/*media registration*/
+
+@media only screen and (max-width:992px){
+    .registration{
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width:576px){
+    .registration{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width:420px){
+    .registration{
+        width:95%;
+    }
+}
+
+/*media room detail*/
+
+@media only screen and (max-width:1116px){
+    .myslide-parent{
+        height: 300px;
+    }
+
+    .column{
+        height: 87px;
+    }
+}
+
+@media only screen and (max-width:817px){
+    .myslide-parent{
+        height: 300px;
+    }
+
+    .column{
+        height: 87px;
+    }
+
+    .left-room-details{
+        width: 50%;
+    }
+
+    .right-room-details{
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width:667px){
+    .column {
+        height: 65px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width:617px){
+    .top-slide{
+        flex-direction: column;
+    }
+
+    .myslide-parent{
+        width: 100%;
+    }
+
+    .row{
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+
+    .column{
+        margin-left: 0px;
+        margin-bottom: 0px;
+    }
+
+    .room-details{
+        flex-direction: column;
+    }
+
+    .left-room-details{
+        width: 100%;
+    }
+
+    .right-room-details{
+        width: 100%;
+    }
+}
+
+
+
+/*------------------------------Post Ad Media Query -------------------------------*/
+
+@media only screen and (min-width: 700px) {
+    .post-ad-header,
+    .post-ad-form {
+	width: 680px;
+    }
+
+    .post-ad-form-row {
+	flex-direction: row;
+	align-items: flex-start;
+	margin-bottom: 20px;
+    }
+
+    .post-ad-form-row input[type='text'],
+    .post-ad-form-row input[type='email'],
+    .post-ad-form-row input[type='number'],
+    .post-ad-form-row input[type='tel'],
+    .post-ad-form-row input[type='file'],
+    .post-ad-form-row select,
+    .post-ad-form-row textarea {
+	width: 300px;
+	height: initial;
+    }
+
+    .post-ad-form-row label {
+	text-align: right;
+	width: 200px;
+	margin-top: 7px;
+	padding-right: 40px;
+    }
+
+    .legacy-form-row {
+	margin-bottom: 10px;
+    }
+
+    .legacy-form-row legend {
+	width: 200px;
+	text-align: right;
+	padding-right: 40px;
+    }
+
+    .legacy-form-row legend {
+	float: left;
+    }
+    .post-ad-form-row .instructions,
+    .post-ad-form-row .errors {
+	margin-left: 200px;
+    }
+
+    .post-ad-form-row button {
+	width: 40%;
+	margin: auto;
+    }
+	
+}
+
+
+
+
+/*-----------------Account section media query ------------------------*/
+@media only screen and (max-width:768px){
+    .left-account{
+        grid-column:1/-1;
+        padding: 0px;
+        margin-right: 0px;
+    }
+
+    .right-account{
+        grid-column:1/-1;
+        padding: 0px;
+    }
+}
+
+
+@media only screen and (max-width:576px){
+    .left-account{
+        grid-column:1/-1;
+        padding: 0px;
+        margin-right: 0px;
+    }
+
+    .right-account{
+        grid-column:1/-1;
+        padding: 0px;
+    }
+}
+
+/*contact-us media query*/
+
+/* @media only screen and (max-width:1024px){ */
+/*     /\* .contact-us-body{ *\/ */
+/*     /\*     margin:auto; *\/ */
+/*     /\* } *\/ */
+
+/*     .contact-us-header{ */
+/*         width: 50%; */
+/*     } */
+
+/*     .contact-us-form{ */
+/*         width:50%; */
+/*     } */
+/* } */
+@media only screen and (min-width:580px) and (max-width:768px){
+    .contact-us-header{
+        width:60%;
+        margin: 20px 0px;
+    }
+    .contact-us-form{
+        width:60%;
+        margin: 0 0 20px 0;
+    }
+}
+
+
+
+@media only screen and (max-width:576px){
+    .contact-us-header{
+        width:80%;
+        margin: 20px 0px;
+    }
+    .contact-us-form{
+        width:80%;
+        margin: 0 0 20px 0;
+    }
+}
+
+
+/*login media query*/
+@media only screen and (min-width:1024px){
+    .login-body{
+        min-height: 90vh;
+    }
+    .login-header{
+    	width: 40%;
+    }
+    .main-login-form{
+    	width: 40%;
+    }
+}
+
+@media only screen and (min-width:770px) and (max-width:1000px){
+    .login-body{
+        min-height: 90vh;
+    }
+    .login-header{
+        width: 50%;
+    }
+
+    .main-login-form{
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width:577px) and (max-width:768px){
+    .login-body {
+        min-height: 90vh;
+    }
+
+    .login-header{
+        width: 50%;
+    }
+
+    .main-login-form{
+        width: 50%;
+    }
+
+}
+
+ @media only screen and (max-width:576px){
+    .login-body {
+        min-height: 100vh;
+    }
+
+    .login-header{
+        width: 80%;
+    }
+
+    .login-header h1{
+        font-size: 24px;
+    }
+
+    .main-login-form{
+        width: 80%;
+    }
+}
+
+/*--------------------logo media query---------------------*/
+
+@media only screen and (max-width:576px){
+    #logo{
+        width: 100px;
+    }
+}
+
+
+.slider-container {
+    width: 100%; /* Adjust as needed */
+    max-width: 600px; /* Adjust as needed */
+    margin: 0 auto; /* Center the slider horizontally */
+    overflow: hidden; /* Hide overflowing images */
+}
+
+.slider {
+    height: 300px; /* Adjust the height as needed */
+}
+
+.slider img {
+    width: 100%; /* Ensure images fill the slider container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+@media (max-width: 991.98px) {
+    .vertical-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        bottom: 0;
+        width: 250px;
+        z-index: 1000;
+        background: #2a3042;
+        border-right: 1px solid #2a3042;
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 375px) {
+    .vertical-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 1000;
+        background: #2a3042;
+        border-right: none;
+        overflow-y: auto;
+    }
+}
+
+/* Optional: Add some basic styling for the dropdown */
+.sub-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sub-menu li {
+    padding: 8px 16px;
+}
+
+.sub-menu li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.sub-menu li a:hover {
+    color: #007bff;
+}
