@@ -1,0 +1,353 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice SMS | Building A Nation Through Connectivity</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Dice SMS | Free SMS Provider of Nepal">
+    <meta name="description" content="Dice SMS | Top Bulk SMS Provider of Nepal">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dicesms.com/">
+    <meta property="og:title" content="Dice SMS | Free SMS Provider of Nepal">
+    <meta property="og:description" content="Dice SMS | Top Bulk SMS Provider of Nepal">
+    <meta property="og:image" content="https://uideck.com/wp-content/uploads/2021/09/play-meta-bs.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dicesms.com/">
+    <meta property="twitter:title" content="Dice SMS | Free SMS Provider of Nepal">
+    <meta property="twitter:description" content="Dice SMS | Top Bulk SMS Provider of Nepal">
+    <meta property="twitter:image" content="https://uideck.com/wp-content/uploads/2021/09/play-meta-bs.jpg">
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="{% static 'frontend/assets/images/favicon.ico' %}" type="image/svg" />
+
+    <!-- ===== All CSS files ===== -->
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/animate.css' %}" />
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/lineicons.css' %}" />
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/ud-styles.css' %}" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    {% block css %}{%endblock css%}
+    <script>
+      /* Center the menu items */
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+/* Ensure buttons are pushed to the right in desktop view */
+.navbar-btn {
+  display: flex;
+  align-items: center;
+}
+
+/* Adjust margins for the buttons */
+.navbar-btn a {
+  margin-left: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-btn {
+    display: none;
+  }
+}
+
+    </script>
+  </head>
+
+  <body>
+    <!-- ====== Header Start ====== -->
+    <header class="ud-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg">
+              <a class="navbar-brand" href="/">
+                <img src="{% static 'frontend/assets/images/logo/dice_logo.png' %}" alt="Logo" />
+              </a>
+              <button class="navbar-toggler">
+                <span class="toggler-icon"> </span>
+                <span class="toggler-icon"> </span>
+                <span class="toggler-icon"> </span>
+              </button>
+              <div class="navbar-collapse">
+                <ul id="nav" class="navbar-nav mx-auto">
+                  <li class="nav-item">
+                    <a class="ud-menu-scroll" href="#home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="ud-menu-scroll" href="#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="ud-menu-scroll" href="#pricing">Pricing</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="ud-menu-scroll" href="#contact">Contact</a>
+                  </li>
+                </ul>
+                  {% if not user.is_authenticated %}
+                  <ul class="navbar-nav d-flex navbar-btn">
+                    <li class="nav-item">
+                      <a href="{% url 'account_login' %}" class="ud-main-btn">Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{% url 'account_signup' %}" class="ud-main-btn">Sign Up</a>
+                    </li>
+                  </ul>
+                  {% else %}
+                  <ul class="navbar-nav d-flex navbar-btn">
+                    <li class="nav-item">
+                      <a href="{% url 'dashboard:admin_dashboard' %}" class="ud-main-btn">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{% url 'account_logout' %}" class="ud-main-btn">Logout</a>
+                    </li>
+                  </ul>
+                  {% endif %}
+              </div>
+              
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ====== Header End ====== -->
+
+    {% comment %} {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-dismissible {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %} {% endcomment %}
+
+    
+    {% block content %}
+        
+    {% endblock content %}
+        
+
+    <!-- ====== Footer Start ====== -->
+    <footer class="ud-footer wow fadeInUp" data-wow-delay=".15s">
+      <div class="shape shape-1">
+        <img src="{% static 'frontend/assets/images/footer/shape-1.svg' %}" alt="shape" />
+      </div>
+      <div class="shape shape-2">
+        <img src="{% static 'frontend/assets/images/footer/shape-2.svg' %}" alt="shape" />
+      </div>
+      <div class="shape shape-3">
+        <img src="{% static 'frontend/assets/images/footer/shape-3.svg' %}" alt="shape" />
+      </div>
+      <div class="ud-footer-widgets">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-5 col-lg-6 col-md-8">
+              <div class="ud-widget">
+                <a href="/" class="ud-footer-logo">
+                  <img src="{% static 'frontend/assets/images/logo/dice_logo.png' %}" alt="logo" />
+                </a>
+                <p class="ud-widget-desc" style=" max-width: fit-content !important;">
+                  At our SMS service, we're dedicated to crafting exceptional digital experiences for brands and companies through the innovative use of technology. Our mission is to empower businesses to connect with their audience in meaningful ways, leveraging the power of SMS to deliver impactful communication solutions.
+                </p>
+                <ul class="ud-widget-socials">
+                  <li>
+                    <a href="https://twitter.com/dicesms">
+                      <i class="lni lni-facebook-filled"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/dicesms">
+                      <i class="lni lni-twitter-filled"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/dicesms">
+                      <i class="lni lni-instagram-filled"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/dicesms">
+                      <i class="lni lni-linkedin-original"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
+              <div class="ud-widget">
+                <h5 class="ud-widget-title">Features</h5>
+                <ul class="ud-widget-links">
+                  <li>
+                    <a href="javascript:void(0)">How it works</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">Privacy policy</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">Terms of service</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">Refund policy</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
+              <div class="ud-widget">
+                <h5 class="ud-widget-title">Quick Links</h5>
+                <ul class="ud-widget-links">
+                  <li>
+                    <a href="#home" rel="nofollow noopner">Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#about" rel="nofollow noopner">About</a>
+                  </li>
+                  <li>
+                    <a href="#pricing" rel="nofollow noopner">Pricing</a>
+                  </li>
+                  <li>
+                    <a href="#contact" rel="nofollow noopner">Contact Us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-8 col-sm-10">
+              <div class="ud-widget">
+                <h5 class="ud-widget-title">Partners</h5>
+                <ul class="ud-widget-brands">
+                  <li>
+                    <a href="https://ajnalab.com" rel="nofollow noopner" target="_blank">
+                      <img src="{% static 'frontend/assets/images/brands/ajna.png' %}" alt="ayroui" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://ecommercehtml.com/" rel="nofollow noopner" target="_blank">
+                      <img src="{% static 'frontend/assets/images/brands/RichTechSmall.png' %}" alt="ecommerce-html" />
+                    </a>
+                  </li>
+                  {%comment%}
+                  <li>
+                    <a href="https://graygrids.com/" rel="nofollow noopner" target="_blank">
+                      <img src="{% static 'frontend/assets/images/footer/brands/graygrids.svg' %}" alt="graygrids" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://lineicons.com/" rel="nofollow noopner" target="_blank">
+                      <img src="{% static 'frontend/assets/images/footer/brands/lineicons.svg' %}" alt="lineicons" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://uideck.com/" rel="nofollow noopner" target="_blank">
+                      <img src="{% static 'frontend/assets/images/footer/brands/uideck.svg' %}" alt="uideck" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://tailwindtemplates.co/" rel="nofollow noopner" target="_blank">
+                      <img src="{% static 'frontend/assets/images/footer/brands/tailwindtemplates.svg' %}" alt="tailwindtemplates" />
+                    </a>
+                  </li>
+                  {%endcomment%}
+                </ul>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ud-footer-bottom">
+        <div class="container">
+          <div class="row">
+              <p class="ud-footer-bottom-right">
+                <script>document.write(new Date().getFullYear())</script> © DICE SMS. All rights reserved.
+              </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ====== Footer End ====== -->
+
+    <!-- ====== Back To Top Start ====== -->
+    <a href="javascript:void(0)" class="back-to-top">
+      <i class="lni lni-chevron-up"> </i>
+    </a>
+    <!-- ====== Back To Top End ====== -->
+
+    <!-- ====== All Javascript Files ====== -->
+    <script src="{% static 'frontend/assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'frontend/assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'frontend/assets/js/main.js' %}"></script>
+    <script>
+      // ==== for menu scroll
+      const pageLink = document.querySelectorAll(".ud-menu-scroll");
+
+      pageLink.forEach((elem) => {
+        elem.addEventListener("click", (e) => {
+          e.preventDefault();
+          document.querySelector(elem.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+            offsetTop: 1 - 60,
+          });
+        });
+      });
+
+      // section menu active
+      function onScroll(event) {
+        const sections = document.querySelectorAll(".ud-menu-scroll");
+        const scrollPos =
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop;
+
+        for (let i = 0; i < sections.length; i++) {
+          const currLink = sections[i];
+          const val = currLink.getAttribute("href");
+          const refElement = document.querySelector(val);
+          const scrollTopMinus = scrollPos + 73;
+          if (
+            refElement.offsetTop <= scrollTopMinus &&
+            refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
+          ) {
+            document
+              .querySelector(".ud-menu-scroll")
+              .classList.remove("active");
+            currLink.classList.add("active");
+          } else {
+            currLink.classList.remove("active");
+          }
+        }
+      }
+
+      window.document.addEventListener("scroll", onScroll);
+    </script>
+  </body>
+
+</html>
