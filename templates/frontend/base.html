@@ -6,7 +6,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Finlytic| Do Your Taxes Responsibly</title>
+    <title>
+      Finlytic| Do Your Taxes Responsibly</title>
 
     <!-- Primary Meta Tags -->
     <meta name="title" content="Finlytic| Do Your Taxes Responsibly">
@@ -38,10 +39,11 @@
 }
 
 /* Adjust margins for the buttons */
-.navbar-btn a {
+/* 
+.navbar-btn a { 
   margin-left: 10px;
 }
-
+*/
 /* Responsive adjustments */
 @media (max-width: 991px) {
   .navbar-collapse {
@@ -64,7 +66,9 @@
     display: none;
   }
 }
-
+.ud-main-btn{
+  background-color: #E6AF2E;
+}
     </style>
   </head>
 
@@ -74,40 +78,55 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-lg" 
+            style="display: flex; 
+            justify-content: space-between;
+             align-items: center;">
               <a class="navbar-brand" href="/">
                 <img src="{% static 'frontend/assets/images/logo/logo-transp.png' %}" alt="Logo" 
      style="width: 100px; 
-     height: auto;
-      float: left;
-       margin-left: -20px;" 
+     height: auto;" 
        />
-
               </a>              
               <button class="navbar-toggler">
                 <span class="toggler-icon"> </span>
                 <span class="toggler-icon"> </span>
                 <span class="toggler-icon"> </span>
               </button>
-              <div class="navbar-collapse">
-                <ul id="nav" class="navbar-nav mx-auto">
+          <div class="navbar-collapse" 
+              style="display: flex;
+              justify-content: space-between;
+              align-items: center;
+              width: 100%;">
+                <ul id="nav" class="navbar-nav " 
+                style="flex-grow: 1; 
+                justify-content: center;">
                   <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#home">Home</a>
+                    <a class="ud-menu-scroll" href="#home">
+                      Home
+                    </a>
                   </li>
                   <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#about">About</a>
+                    <a class="ud-menu-scroll" href="#about">
+                      About
+                    </a>
                   </li>
                   <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#pricing">Pricing</a>
+                    <a class="ud-menu-scroll" href="#pricing">
+                      Pricing
+                    </a>
                   </li>
                   <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#contact">Contact</a>
+                    <a class="ud-menu-scroll" href="#contact">
+                      Contact
+                    </a>
                   </li>
                 </ul>
+                <div class="navbar-btn"
+                style="display: flex;
+              align-items: center;">
                   {% if not user.is_authenticated %}
-                  <ul class="navbar-nav d-flex navbar-btn" 
-                  style="margin-left: auto;
-                  margin-right: 20px;">
+                  <ul class="navbar-nav d-flex navbar-btn">
                     <li class="nav-item">
                       <a href="{% url 'account_login' %}" 
                       class="ud-main-btn">
@@ -133,6 +152,7 @@
                   </ul>
                   {% endif %}
               </div>
+            </div>
               
             </nav>
           </div>
