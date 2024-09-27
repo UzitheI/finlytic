@@ -17,7 +17,7 @@
 {% block content %}
 
     <!-- ====== Hero Start ====== -->
-    <section class="ud-hero" id="home">
+    <section class="ud-hero" id="home" style="background-color: #012622;">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -31,25 +31,22 @@
               </p>
               <ul class="ud-hero-buttons">
                 <li>
-                  <a href="{% url 'account_signup' %}" rel="nofollow noopener" class="ud-main-btn ud-white-btn">
-                    Free Trial
+                  <a href="#contact" rel="nofollow noopener" class="ud-main-btn ud-link-btn shimmer" style="background-color: #E6AF2E; border-color: #E6AF2E; color: #fff;">
+                    <p style="color:black;">Try Our Compliance Model <i class="lni lni-arrow-right"></i></p> 
                   </a>
                 </li>
-                <li>
-                  <a href="#contact" rel="nofollow noopener" class="ud-main-btn ud-link-btn shimmer">
-                    Try Simrik <i class="lni lni-arrow-right "></i>
-                  </a>
-                </li>
-              </ul>
+              </ul>              
             </div>
             <div class="ud-hero-brands-wrapper wow fadeInUp" data-wow-delay=".3s">
-              <img src="{% static 'frontend/assets/images/hero/ntc.png' %}" alt="brand" style=" height: 5em; width: 4em; "/>
-              <img src="{% static 'frontend/assets/images/hero/ncell.svg' %}" alt="brand" style="padding-left: 30px;height: 2em;"/>
+              <img src="{% static 'frontend/assets/images/logo/logo-transp.png' %}" alt="brand" style=" height: 5em; width: 4em; "/>
             </div>
             <div class="ud-hero-image wow fadeInUp" data-wow-delay=".25s">
-              <img src="{% static 'frontend/assets/images/hero/hero-image.svg' %}" alt="hero-image" />
+              {% comment %} <img src="{% static 'frontend/assets/images/hero/hero-image.svg' %}" alt="hero-image" />
               <img src="{% static 'frontend/assets/images/hero/dotted-shape.svg' %}" alt="shape" class="shape shape-1" />
               <img src="{% static 'frontend/assets/images/hero/dotted-shape.svg' %}" alt="shape" class="shape shape-2" />
+              <img src="{% static 'frontend/assets/images/hero/hero-image.svg' %}" alt="hero-image" />
+              <img src="{% static 'frontend/assets/images/hero/dotted-shape.svg' %}" alt="shape" class="shape shape-1" />
+              <img src="{% static 'frontend/assets/images/hero/dotted-shape.svg' %}" alt="shape" class="shape shape-2" /> {% endcomment %}
             </div>
           </div>
         </div>
@@ -64,7 +61,7 @@
           <div class="col-lg-12">
             <div class="ud-section-title">
               <span>विशेषताहरू</span>
-              <h2>
+              <h2 style="color:#012622">
                 मुख्य विशेषताहरू</h2>
               <p>
                 Finlytic सँग तपाइँको करहरू गर्ने केही फाइदाहरू:
@@ -79,9 +76,9 @@
                 <i class="lni lni-gift"></i>
               </div>
               <div class="ud-feature-content">
-                <h3 class="ud-feature-title">कुशल संचार</h3>
-                <p class="ud-feature-desc">
-                  समयमै र लक्षित संदेशहरूले तपाईंलाई आफ्ना निकट जनसंख्यासँग संचार क्षमतामा सुधार गर्नुहोस्।
+                <h3 class="ud-feature-title" style="color: #E6AF2E">Compliance Checking</h3>
+                <p class="ud-feature-desc" style="color:#012622">
+                  हाम्रो मोडेलले पूर्वनिर्धारित अनुपालन नियम र नियमहरू विरुद्ध क्रस-रेफरेन्सिङ डेटाद्वारा गैर-अनुपालन ढाँचाहरू पत्ता लगाउन ठूला डाटासेटहरूको विश्लेषण गर्न सक्छ।
                 </p>
                 
               </div>
