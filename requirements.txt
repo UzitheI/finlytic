@@ -2,9 +2,12 @@ asgiref==3.8.1
 Django==5.1.1
 django-allauth==64.2.1
 django-debug-toolbar==4.4.6
+<<<<<<< HEAD
 mysqlclient==2.2.4
 psycopg==3.2.2
 psycopg2==2.9.9
+=======
+>>>>>>> origin/jinesh_branch
 python-dotenv==1.0.1
 sqlparse==0.5.1
 typing_extensions==4.12.2
