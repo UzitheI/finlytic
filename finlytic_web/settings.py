@@ -124,12 +124,28 @@ USE_I18N = True
 
 USE_TZ = True
 
+ACCOUNT_EMAIL_VERIFICATION = "optional"  # or "none" if you don't require email verification
+ACCOUNT_EMAIL_REQUIRED = True  # If you don't need email verification, you can set this to False
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# settings.py
+LOGIN_REDIRECT_URL = 'frontend:index'  # Redirect after login
+ACCOUNT_SIGNUP_REDIRECT_URL = 'frontend:index'  # Redirect after signup
+
+
+# EMAIL_HOST = 'smtp.your-email-provider.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'your-email@example.com'
+# EMAIL_HOST_PASSWORD = 'your-email-password'
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",  # Adjust this based on your project structure

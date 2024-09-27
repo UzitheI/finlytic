@@ -1,0 +1,169 @@
+{% extends "frontend/base.html" %}
+{% block css %}
+{% load static %}
+<style>
+  #nav {
+      display: none; /* Hide the menu */
+  }
+  .sticky .navbar {
+    padding: 10px;
+  }
+</style>
+{%endblock%}
+
+
+
+{% comment %} {% block inner %}
+
+  <h1>{% translate "Sign In" %}</h1>
+
+  {% get_providers as socialaccount_providers %}
+
+  {% if socialaccount_providers %}
+    <p>
+      {% translate "Please sign in with one of your existing third party accounts:" %}
+      {% if ACCOUNT_ALLOW_REGISTRATION %}
+        {% blocktranslate trimmed %}
+          Or, <a href="{{ signup_url }}">sign up</a>
+          for a {{ site_name }} account and sign in below:
+        {% endblocktranslate %}
+      {% endif %}
+    </p>
+
+    <div class="socialaccount_ballot">
+
+      <ul class="socialaccount_providers">
+        {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+      </ul>
+
+      <div class="login-or">{% translate "or" %}</div>
+
+    </div>
+
+    {% include "socialaccount/snippets/login_extra.html" %}
+
+  {% else %}
+    {% if ACCOUNT_ALLOW_REGISTRATION %}
+      <p>
+        {% blocktranslate trimmed %}
+          If you have not created an account yet, then please
+          <a href="{{ signup_url }}">sign up</a> first.
+        {% endblocktranslate %}
+      </p>
+    {% endif %}
+  {% endif %}
+
+  <form class="login" method="POST" action="{% url 'account_login' %}">
+    {% csrf_token %}
+    {{ form|crispy }}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% translate "Forgot Password?" %}</a>
+    <button class="primaryAction btn btn-primary" type="submit">{% translate "Sign In" %}</button>
+  </form>
+
+{% endblock %} {% endcomment %}
+
+
+
+
+{% block content %}
+  
+    <!-- ====== Banner Start ====== -->
+    <section class="ud-page-banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="ud-banner-content">
+              <h1>साइन इन</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== Banner End ====== -->
+    <!-- ====== Login Start ====== -->
+    <section class="ud-login">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="ud-login-wrapper">
+              <div class="ud-login-logo">
+                <img src="{% static 'frontend/assets/images/logo/logo-transp.png' %}" alt="logo" />
+              </div>
+                  {% if messages %}
+                      {% for message in messages %}
+                          <div class="alert alert-dismissible {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                          {{ message }}
+                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                          </div>
+                      {% endfor %}
+                  {% endif %}
+
+                  {% if form.errors %}
+                      {% for error in form.non_field_errors %}
+                          <div class="alert alert-dismissible">
+                          {{ error }}
+                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                          </div>
+                      {% endfor %}
+                  {% endif %}
+
+              <form class="ud-login-form" method="POST" action="{% url 'account_login' %}">
+                {% csrf_token %}
+                <div class="ud-form-group">
+                  <input
+                    type="text"
+                    name="{{ form.login.name }}"
+                    placeholder="Email/username"
+                  />
+                </div>
+                <div class="ud-form-group">
+                  <input
+                    type="password"
+                    name="{{ form.password.name }}"
+                    placeholder="*********"
+                  />
+                  {% comment %} {{ form|crispy }} {% endcomment %}
+                </div>
+                <div class="ud-form-group">
+                  <button type="submit" class="ud-main-btn w-100">Login</button>
+                </div>
+              </form>
+
+              {% comment %} <div class="ud-socials-connect">
+                <p>Connect With</p>
+
+                <ul>
+                  <li>
+                    <a href="{% provider_login_url 'facebook' %}" class="facebook">
+                      <i class="lni lni-facebook-filled"></i>
+                    </a>
+                  </li>
+                   <li>
+                    <a href="javascript:void(0)" class="twitter">
+                      <i class="lni lni-twitter-filled"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% provider_login_url 'google' %}" class="google">
+                      <i class="lni lni-google"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div> {% endcomment %}
+
+              <a class="forget-pass" href="{% url 'account_reset_password' %}">
+                Forget Password?
+              </a>
+              <p class="signup-option">
+                Not a member yet? <a href="{% url 'account_signup' %}"> Sign Up </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock content %}
+  
