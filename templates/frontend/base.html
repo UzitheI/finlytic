@@ -76,7 +76,13 @@
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
               <a class="navbar-brand" href="/">
-                <img src="{% static 'frontend/assets/images/logo/logo-transp.png' %}" alt="Logo" style="width: 100px; height: auto;" />
+                <img src="{% static 'frontend/assets/images/logo/logo-transp.png' %}" alt="Logo" 
+     style="width: 100px; 
+     height: auto;
+      float: left;
+       margin-left: -20px;" 
+       />
+
               </a>              
               <button class="navbar-toggler">
                 <span class="toggler-icon"> </span>
@@ -99,18 +105,27 @@
                   </li>
                 </ul>
                   {% if not user.is_authenticated %}
-                  <ul class="navbar-nav d-flex navbar-btn">
+                  <ul class="navbar-nav d-flex navbar-btn" 
+                  style="margin-left: auto;
+                  margin-right: 20px;">
                     <li class="nav-item">
-                      <a href="{% url 'account_login' %}" class="ud-main-btn">Sign In</a>
+                      <a href="{% url 'account_login' %}" 
+                      class="ud-main-btn">
+                        Sign In
+                      </a>
                     </li>
                     <li class="nav-item">
-                      <a href="{% url 'account_signup' %}" class="ud-main-btn">Sign Up</a>
+                      <a href="{% url 'account_signup' %}" 
+                      class="ud-main-btn">
+                        Sign Up</a>
                     </li>
                   </ul>
                   {% else %}
                   <ul class="navbar-nav d-flex navbar-btn">
                     <li class="nav-item">
-                      <a href="" class="ud-main-btn">Dashboard</a>
+                      <a href="" class="ud-main-btn">
+                        Dashboard
+                      </a>
                     </li>
                     <li class="nav-item">
                       <a href="{% url 'account_logout' %}" class="ud-main-btn">Logout</a>
@@ -178,6 +193,9 @@
                   <li>
                     <a href="javascript:void(0)">Terms of service</a>
                   </li>
+                  <li>
+                    <a href="javascript:void(0)">Refund policy</a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -201,6 +219,46 @@
                 </ul>
               </div>
             </div>
+            <div class="col-xl-3 col-lg-6 col-md-8 col-sm-10">
+              <div class="ud-widget">
+                <h5 class="ud-widget-title">Partners</h5>
+                <ul class="ud-widget-brands">
+                  <li>
+                    <a href="https://ajnalab.com" rel="nofollow noopner" target="_blank">
+                      <img src="{% static 'frontend/assets/images/brands/ajna.png' %}" alt="ayroui" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://ecommercehtml.com/" rel="nofollow noopner" target="_blank">
+                      <img src="{% static 'frontend/assets/images/brands/RichTechSmall.png' %}" alt="ecommerce-html" />
+                    </a>
+                  </li>
+                  {%comment%}
+                  <li>
+                    <a href="https://graygrids.com/" rel="nofollow noopner" target="_blank">
+                      <img src="{% static 'frontend/assets/images/footer/brands/graygrids.svg' %}" alt="graygrids" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://lineicons.com/" rel="nofollow noopner" target="_blank">
+                      <img src="{% static 'frontend/assets/images/footer/brands/lineicons.svg' %}" alt="lineicons" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://uideck.com/" rel="nofollow noopner" target="_blank">
+                      <img src="{% static 'frontend/assets/images/footer/brands/uideck.svg' %}" alt="uideck" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://tailwindtemplates.co/" rel="nofollow noopner" target="_blank">
+                      <img src="{% static 'frontend/assets/images/footer/brands/tailwindtemplates.svg' %}" alt="tailwindtemplates" />
+                    </a>
+                  </li>
+                  {%endcomment%}
+                </ul>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>
