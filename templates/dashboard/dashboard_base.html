@@ -1,0 +1,329 @@
+{% load i18n %}
+<!doctype html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Dashboard | Finlytic</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="Themesdesign" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico'%}">
+        
+        <!-- jvectormap -->
+        <link href="{% static 'assets/libs/jqvmap/jqvmap.min.css'%}" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+        <!-- Bootstrap Css -->
+        <link href="{% static 'assets/css/bootstrap.min.css'%}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="{% static 'assets/css/icons.min.css'%}" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="{% static 'assets/css/app.min.css'%}" id="app-style" rel="stylesheet" type="text/css" />
+        {% comment %} <link href="{% static 'css/style.css'%}" id="app-style" rel="stylesheet" type="text/css" /> {% endcomment %}
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+        {% comment %} <link rel="stylesheet" href="{% static 'css/style.css'%}"> {% endcomment %}
+        
+        {% block linkcss %}
+
+        {% endblock linkcss %}
+    </head>
+
+    <body data-sidebar="dark">
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+            <header id="page-topbar">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box text-center">
+
+                            <a href="{% url 'dashboard:dashboard' %}" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="{% static 'frontend/assets/images/logo/logo-transp.png'  %}" alt="logo-sm-light" height="60">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="{% static 'frontend/assets/images/logo/logo-transp.png'  %}" alt="logo-light" height="60">
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect d-lg-none" id="vertical-menu-btn">
+                            <i class="ri-menu-2-line align-middle"></i>
+                        </button>
+
+                        <!-- <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
+                            <i class="ri-menu-2-line align-middle"></i>
+                        </button> -->
+
+                        <!-- App Search-->
+                        <!-- <form class="app-search d-none d-lg-block">
+                            <div class="position-relative">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="ri-search-line"></span>
+                            </div>
+                        </form> -->
+                    </div>
+
+                    <div class="d-flex">
+
+                        <div class="dropdown d-inline-block d-lg-none ms-2">
+                            <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="ri-search-line"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                    
+                                <form class="p-3">
+                                    <div class="mb-3 m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ...">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="submit"><i class="ri-search-line"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="dropdown d-inline-block user-dropdown">
+                            <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="rounded-circle header-profile-user" src="{% static 'assets/images/users/profile-default.svg' %}"
+                                    alt="Header Avatar">
+                                <span class="d-none d-xl-inline-block ms-1"> {{ user.email }} </span>
+                                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                
+                                <a class="dropdown-item" href=""><i class="ri-user-line align-middle me-1"></i> Profile</a>
+                                
+                               
+                                <form id="logout-form" method="post" action="{% url 'account_logout' %}" style="display: none;">
+                                    {% csrf_token %}
+                                </form>
+                                <a class="dropdown-item" href="#" onclick="document.getElementById('logout-form').submit();">
+                                    <i class="ri-logout-box-line align-middle me-1"></i> Logout
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu d-none d-lg-block">
+
+                <div data-simplebar class="h-100">
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <!-- Left Menu Start -->
+                        <ul class="metismenu list-unstyled" id="side-menu">
+                            <li class="menu-title">Menu</li>
+
+                            <li>
+                                <a href="{% url 'frontend:index' %}" class="waves-effect">
+                                    <i class="ri-home-line align-middle me-1"></i>
+                                    <span>Home</span>
+                                </a>
+                                <a href="{% url 'dashboard:dashboard' %}" class="waves-effect">
+                                    <i class="mdi mdi-home-variant-outline"></i>
+                                    {%if messages_count %}
+                                    <span
+                                        class="badge rounded-pill bg-primary float-end">
+                                        {{messages_count}}</span>
+                                    {% endif %}    
+                                    <span>Dashboard</span>
+                                </a>
+                               
+                            </li>
+                            <li class="menu-title">Setup</li>
+
+
+                            {% if user.is_superuser and user.is_staff %}
+                            <li class="menu-item">
+                                <a href="#" class="has-arrow waves-effect" id="messagesMenu">
+                                    <i class="mdi mdi-account-cog"></i>
+                                    <span>FAQ</span>
+                                </a>
+                                <ul class="sub-menu" id="messagesDropdown" style="display: none;">
+                                    <li><a href="#">
+                                            Create
+                                        </a></li>
+                                    <li><a href="#">
+                                            List
+                                        </a></li>
+                                    </ul>
+                                </li>
+                                {% else %}
+                                <li class="menu-item">
+                                    <a href="#" class="has-arrow waves-effect" id="messagesMenu">
+                                        <i class="mdi mdi-account-cog"></i>
+                                        <span>Share Your Details</span>
+                                    </a>
+                                    <ul class="sub-menu" id="messagesDropdown" style="display: none;">
+                                        <li><a href="#">
+                                                Enter
+                                            </a></li>
+                                        <li><a href="#">
+                                                List
+                                            </a></li>
+                                        </ul>
+                                    </li>
+                                    {%endif%}
+                        </ul>
+                    </div>
+                    <!-- Sidebar -->
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+             
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+                        {% block content %}{% endblock content %}
+                    </div>
+                </div>
+                
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <script>document.write(new Date().getFullYear())</script> © Finlytic
+                            </div>
+                            <!-- <div class="col-sm-6">
+                                <div class="text-sm-end d-none d-sm-block">
+                                    Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign
+                                    & 
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+            <!-- end main content-->
+        </div>
+        <!-- END layout-wrapper -->
+
+
+
+
+<!-- jQuery (make sure this is the latest version) -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+<!-- Bootstrap and other libraries -->
+<script src="{% static 'assets/libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/libs/metismenu/metisMenu.min.js' %}"></script>
+<script src="{% static 'assets/libs/simplebar/simplebar.min.js' %}"></script>
+<script src="{% static 'assets/libs/node-waves/waves.min.js' %}"></script>
+
+<!-- Additional libraries -->
+<script src="{% static 'assets/libs/apexcharts/apexcharts.min.js' %}"></script>
+<script src="{% static 'assets/libs/jqvmap/jquery.vmap.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tagify/4.9.5/tagify.min.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var verticalMenuBtn = document.getElementById('vertical-menu-btn');
+                var verticalMenu = document.querySelector('.vertical-menu');
+        
+                verticalMenuBtn.addEventListener('click', function() {
+                    verticalMenu.classList.toggle('d-none');
+                    verticalMenu.classList.toggle('d-block');
+                });
+        
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    var isClickInside = verticalMenu.contains(event.target) || verticalMenuBtn.contains(event.target);
+                    if (!isClickInside && window.innerWidth < 992) {
+                        verticalMenu.classList.remove('d-block');
+                        verticalMenu.classList.add('d-none');
+                    }
+                });
+        
+                // Adjust menu visibility on window resize
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth >= 992) {
+                        verticalMenu.classList.remove('d-none');
+                        verticalMenu.classList.add('d-block');
+                    } else {
+                        verticalMenu.classList.remove('d-block');
+                        verticalMenu.classList.add('d-none');
+                    }
+                });
+            });
+
+                document.addEventListener('DOMContentLoaded', function() {
+                    var myAdsMenu = document.getElementById('myAdsMenu');
+                    var myAdsDropdown = document.getElementById('myAdsDropdown');
+                
+                    myAdsMenu.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        if (myAdsDropdown.style.display === 'none') {
+                            myAdsDropdown.style.display = 'block';
+                        } else {
+                            myAdsDropdown.style.display = 'none';
+                        }
+                    });
+                });
+
+                document.addEventListener('DOMContentLoaded', function() {
+                    var articlesMenu = document.getElementById('articlesMenu');
+                    var articlesDropdown = document.getElementById('articlesDropdown');
+                
+                    articlesMenu.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        if (articlesDropdown.style.display === 'none') {
+                            articlesDropdown.style.display = 'block';
+                        } else {
+                            articlesDropdown.style.display = 'none';
+                        }
+                    });
+                });
+                document.addEventListener('DOMContentLoaded', function() {
+                    var articlesMenu = document.getElementById('messagesMenu');
+                    var articlesDropdown = document.getElementById('messagesDropdown');
+                
+                    articlesMenu.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        if (articlesDropdown.style.display === 'none') {
+                            articlesDropdown.style.display = 'block';
+                        } else {
+                            articlesDropdown.style.display = 'none';
+                        }
+                    });
+                });
+
+                document.addEventListener('DOMContentLoaded', function(){
+                    var usersMenu = document.getElementById('usersMenu');
+                    var usersMenuDropdown = document.getElementById('usersMenuDropdown');
+
+                    usersMenu.addEventListener('click', function(e){
+                        e.preventDefault();
+                        if (usersMenuDropdown.style.display === 'none'){
+                            usersMenuDropdown.style.display = 'block';
+                        } else{
+                            usersMenuDropdown.style.display = 'none';
+                        }
+                    }); 
+                });
+
+                
+        </script>
+
+
+    
+        {% block linkjs %}
+        
+        {% endblock linkjs %}
+    </body>
+</html>

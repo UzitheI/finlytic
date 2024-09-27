@@ -1,6 +1,7 @@
 {% extends 'frontend/base.html' %}
 {% load static %}
 {% block css %}
+{% load crispy_forms_tags %}
 <style>
   .shimmer {
     display:inline-block;
@@ -23,7 +24,7 @@
           <div class="col-lg-12">
             <div class="ud-hero-content wow fadeInUp" data-wow-delay=".2s">
               <h1 class="ud-hero-title">
-                Finlytic सँग आफ्नो करहरू गर्नुहोस्
+                Finlytic सँग आफ्नो करहरू तिर्नुहोस्
               </h1>
               <p class="ud-hero-desc">
                 <!-- Multidisciplinary Web Template Built with Your Favourite
@@ -181,11 +182,11 @@
                   <span class="icon flex-shrink-0">
                     <i class="lni lni-chevron-down"></i>
                   </span>
-                  <span>What are the benefits of using SMS for business communication?</span>
+                  <span>Is my personal and financial information safe when using this system?</span>
                 </button>
                 <div id="collapseOne" class="accordion-collapse collapse">
                   <div class="ud-faq-body">
-                    SMS offers high open and response rates, making it an effective channel for reaching customers. It's also cost-effective, reliable, and has wide reach across different mobile devices.
+                    Yes, your privacy is our top priority. We use industry-standard encryption and secure servers to ensure that your personal and financial information is protected at all times. We never share your data with third parties without your explicit consent.
                   </div>
                 </div>
               </div>
@@ -196,11 +197,11 @@
                   <span class="icon flex-shrink-0">
                     <i class="lni lni-chevron-down"></i>
                   </span>
-                  <span>What support options do you offer?</span>
+                  <span>Is this tax compliance system free to use?</span>
                 </button>
                 <div id="collapseTwo" class="accordion-collapse collapse">
                   <div class="ud-faq-body">
-                    We offer various support options including email support, live chat, phone support, and comprehensive documentation to help you get the most out of our SMS services.
+                    Our basic tax compliance services are free, allowing you to get an overview of your tax obligations and guidance on how to file them. We also offer premium features and personalized support for a small fee if you require more detailed assistance.
                   </div>
                 </div>
               </div>
@@ -211,11 +212,11 @@
                   <span class="icon flex-shrink-0">
                     <i class="lni lni-chevron-down"></i>
                   </span>
-                  <span>Can I send bulk SMS messages?</span>
+                  <span>How accurate is the tax advice provided by this system?</span>
                 </button>
                 <div id="collapseThree" class="accordion-collapse collapse">
                   <div class="ud-faq-body">
-                    Yes, our platform allows you to send bulk SMS messages to multiple recipients simultaneously. This is ideal for marketing campaigns, notifications, reminders, and other types of mass communication.
+                    Our tax compliance system is designed to provide accurate and up-to-date advice based on the latest tax regulations. However, we recommend consulting a tax professional for complex or unique situations to ensure full compliance.
                   </div>
                 </div>
               </div>
@@ -228,11 +229,11 @@
                   <span class="icon flex-shrink-0">
                     <i class="lni lni-chevron-down"></i>
                   </span>
-                  <span>Is it possible to personalize SMS messages?</span>
+                  <span> Can this system handle multiple tax categories or different types of income?</span>
                 </button>
                 <div id="collapseFour" class="accordion-collapse collapse">
                   <div class="ud-faq-body">
-                    Yes, our platform supports dynamic fields, allowing you to personalize each message with recipient-specific information such as their name or account details.
+                    Yes, our system is equipped to categorize your inputs into various tax categories, whether you have multiple sources of income, business expenses, or other financial considerations. It provides tailored advice based on your specific situation.
                   </div>
                 </div>
               </div>
@@ -243,11 +244,11 @@
                   <span class="icon flex-shrink-0">
                     <i class="lni lni-chevron-down"></i>
                   </span>
-                  <span>What type of reporting and analytics do you provide?</span>
+                  <span>How does this system ensure my compliance?</span>
                 </button>
                 <div id="collapseFive" class="accordion-collapse collapse">
                   <div class="ud-faq-body">
-                    Our platform offers comprehensive reporting and analytics tools that allow you to track delivery rates, open rates, click-through rates, and other key metrics. This data helps you measure the effectiveness of your SMS campaigns and make informed decisions.
+                    Our tax compliance system uses advanced algorithms and the latest tax laws to analyze your data and guide you through the filing process. It helps identify potential deductions, credits, and filing requirements to ensure you remain compliant with the tax authorities.
                   </div>
                 </div>
               </div>
@@ -258,11 +259,11 @@
                   <span class="icon flex-shrink-0">
                     <i class="lni lni-chevron-down"></i>
                   </span>
-                  <span>Can I integrate SMS messaging with my existing systems or applications?</span>
+                  <span>Can I access support if I have questions?</span>
                 </button>
                 <div id="collapseSix" class="accordion-collapse collapse">
                   <div class="ud-faq-body">
-                    Yes, our platform provides APIs and integrations that allow you to seamlessly integrate SMS messaging with your existing systems, CRM software, marketing automation tools, and more.
+                    Absolutely! We offer customer support via email, chat, and phone for any questions or issues you may have. Our team is here to help you understand the system and ensure your tax compliance experience is smooth and hassle-free.
                   </div>
                 </div>
               </div>
@@ -285,32 +286,18 @@
                   Love to hear from you!
                 </h2>
               </div>
-              <div class="ud-contact-info-wrapper">
-                <div class="ud-single-info">
-                  <div class="ud-info-icon">
-                    <i class="lni lni-map-marker"></i>
-                  </div>
-                  <div class="ud-info-meta">
-                    <h5>Our Location</h5>
-                    <p>Old Baneshwor, Bhimsengola, Kathmandu</p>
-                  </div>
-                </div>
-                <div class="ud-single-info">
-                  <div class="ud-info-icon">
-                    <i class="lni lni-envelope"></i>
-                  </div>
-                  <div class="ud-info-meta">
-                    <h5>How Can We Help?</h5>
-                    <p>contact@dicesms.asia</p>
-                    <p>support@dicesms.asia</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
           <div class="col-xl-4 col-lg-5">
             <div class="ud-contact-form-wrapper wow fadeInUp" data-wow-delay=".2s">
               <h3 class="ud-contact-form-title">Send us a Message</h3>
+              <form method="post" action="{% url 'frontend:index' %}" id="contactForm"> 
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div style="padding-top: 8px;"></div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            
               <div id="message-container"></div>
               {% comment %} <form id="contact_us_form" class="ud-contact-form" method="POST" action="{% url 'frontend:contact_us' %}">
                 {% csrf_token %}

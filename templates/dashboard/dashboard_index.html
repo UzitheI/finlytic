@@ -1,0 +1,267 @@
+{% extends 'dashboard/dashboard_base.html' %}
+{% load static %}
+{% block title %}index{% endblock title %}
+{% block content %}
+ 
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0">Dashboard</h4>
+
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Finlytic</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+
+            </div>
+        </div>
+        <!-- end page title -->
+
+
+
+
+        
+        {% if user.is_authenticated %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Welcome to Finlytic
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endif %}
+
+
+
+
+
+<div class="row">
+    <div class="col-xl-3 col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex text-muted">
+                    <div class="flex-shrink-0 me-3 align-self-center">
+                        <div id="radialchart-1" class="apex-charts" dir="ltr"></div>
+                    </div>
+                    <div class="flex-grow-1 overflow-hidden">
+                        <p class="mb-1">Due Date
+                        </p>
+                        {% comment %} <h5 class="mb-3">{{ total_count }}</h5> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+            <!-- end card-body -->
+        </div>
+        <!-- end card -->
+    </div>
+    <!-- end col -->
+{% if not user.is_authenticated%}
+    <div class="col-xl-3 col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="flex-shrink-0 me-3 align-self-center">
+                        <div id="radialchart-2" class="apex-charts" dir="ltr"></div>
+                    </div>
+                    <div class="flex-grow-1 overflow-hidden">
+                        <p class="mb-1">Total Tax</p>
+                        <h5 class="mb-3">{{click_count}}</h5>
+                    </div>
+                </div>
+            </div>
+            <!-- end card-body -->
+        </div>
+        <!-- end card -->
+    </div>
+    <!-- end col -->
+
+    <div class="col-xl-3 col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex text-muted">
+                    <div class="flex-shrink-0 me-3 align-self-center">
+                        <div id="radialchart-3" class="apex-charts" dir="ltr"></div>
+                    </div>
+                    <div class="flex-grow-1 overflow-hidden">
+                        <p class="mb-1">Emails Received</p>
+                        <h5 class="mb-3">{{messages_count| default:0}}</h5>
+                    </div>
+                </div>                                        
+            </div>
+            <!-- end card-body -->
+        </div>
+        <!-- end card -->
+    </div>
+    <!-- end col -->
+
+    <div class="col-xl-3 col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex text-muted">
+                    <div class="flex-shrink-0  me-3 align-self-center">
+                        <div class="avatar-sm">
+                            <div class="avatar-title bg-light rounded-circle text-primary font-size-20">
+                                <i class="ri-group-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1">
+                        <p class="mb-1">Daily Click</p>
+                        <h5>{{total_clicks_last_24_hours|default:0}}</h5>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- end card-body -->
+        </div>
+        <!-- end card -->
+    </div>
+    <!-- end col -->
+</div>
+{% else %}
+<div class="col-xl-3 col-sm-6">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex">
+                <div class="flex-shrink-0 me-3 align-self-center">
+                    <div id="radialchart-2" class="apex-charts" dir="ltr"></div>
+                </div>
+                <div class="flex-grow-1 overflow-hidden">
+                    <p class="mb-1">Total Users</p>
+                    <h5 class="mb-3">{{click_count}}</h5>
+                </div>
+            </div>
+        </div>
+        <!-- end card-body -->
+    </div>
+    <!-- end card -->
+</div>
+<!-- end col -->
+
+<div class="col-xl-3 col-sm-6">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex text-muted">
+                <div class="flex-shrink-0 me-3 align-self-center">
+                    <div id="radialchart-3" class="apex-charts" dir="ltr"></div>
+                </div>
+                <div class="flex-grow-1 overflow-hidden">
+                    <p class="mb-1">Emails Received</p>
+                    <h5 class="mb-3">{{messages_count| default:0}}</h5>
+                </div>
+            </div>                                        
+        </div>
+        <!-- end card-body -->
+    </div>
+    <!-- end card -->
+</div>
+<!-- end col -->
+
+<div class="col-xl-3 col-sm-6">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex text-muted">
+                <div class="flex-shrink-0  me-3 align-self-center">
+                    <div class="avatar-sm">
+                        <div class="avatar-title bg-light rounded-circle text-primary font-size-20">
+                            <i class="ri-group-line"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-grow-1">
+                    <p class="mb-1">Users with Deadlines</p>
+                    <h5>{{total_clicks_last_24_hours|default:0}}</h5>
+                </div>
+                
+            </div>
+        </div>
+        <!-- end card-body -->
+    </div>
+    <!-- end card -->
+</div>
+<!-- end col -->
+</div>
+{%endif%}
+
+<!-- end row -->
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="dropdown">
+                    <input type="text" class="form-control dropdown-toggle" id="ad_search" 
+                           data-bs-toggle="dropdown" aria-expanded="false" 
+                           placeholder="Search for users...">
+                    <ul class="dropdown-menu w-100" id="suggestions">
+                        <!-- Dropdown items will be inserted here -->
+                    </ul>
+                </div>
+                <h4 class="card-title mb-4" style="margin-top:20px;">List of Taxes to be Paid</h4>
+
+                        <div class="table-responsive">
+                            <table class="table table-centered table-nowrap mb-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Sn No.</th>
+                                        <th scope="col">Deadline Date</th>
+                                        <th scope="col">Detail</th>
+                                        <th scope="col">Location</th>
+                                        <th scope="col">Total Amount</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for user in users %}
+                                        {% if user.id == item.created_by.id or user.is_superuser%}
+                                        <tr>
+                                            <td><strong>#AD{{item.id}}</strong></td>
+                                            <td>{{ item.ad_title }}</td>
+                                            <td>Rs. {{ item.rent }}</td>
+                                            <td>{{ item.ad_description | truncatechars:25}}</td>
+                                            <td>{{ item.location }}</td>
+                                            <td>
+                                                {% if item.bike_parking %}
+                                                    <i class="mdi mdi-checkbox-blank-circle text-success me-1"></i>
+                                                {% else %}
+                                                    <i class="mdi mdi-checkbox-blank-circle text-warning me-1"></i>
+                                                {% endif %}
+                                                /
+                                                {% if item.car_parking %}
+                                                    <i class="mdi mdi-checkbox-blank-circle text-success me-1"></i>
+                                                {% else %}
+                                                    <i class="mdi mdi-checkbox-blank-circle text-warning me-1"></i>
+                                                {% endif %}
+                                            </td>
+                                            <td>{{ item.price_negotiable }}</td>
+                                            <td>
+                                                <!-- <button type="button" class="btn btn-outline-success btn-sm" onclick="window.location.href = '{% url 'adverts:detail' item.pk %}'"><i class="ri-eye-fill"></i></button>
+                                                <button type="button" class="btn btn-outline-danger btn-sm" onclick="window.location.href = '{% url 'adverts:edit_post' item.pk %}'"><i class="ri-edit-2-line"></i></button> -->
+                                            </td>
+                                        {%endif%}
+                                    {% endfor %}
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- end card-body -->
+
+                </div>
+            </div>
+            <!-- end card-body -->
+        </div>
+        <!-- end card -->
+    </div>
+    <!-- end col -->
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <style>
+    .dropdown-menu {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    </style>
+{% endblock %}

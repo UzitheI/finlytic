@@ -1,6 +1,8 @@
 asgiref==3.8.1
+crispy-bootstrap4==2024.1
 Django==5.1.1
 django-allauth==64.2.1
+django-crispy-forms==2.3
 django-debug-toolbar==4.4.6
 mysqlclient==2.2.4
 psycopg==3.2.2

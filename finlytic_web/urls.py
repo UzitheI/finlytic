@@ -23,5 +23,6 @@ urlpatterns = [
     path('',include('frontend.urls')),
     path("accounts/", include("allauth.urls")),
     path('accounts/', include('allauth.socialaccount.urls')),
+    path('dashboard/', include('dashboard.urls')),
     #  path("accounts/signup/", CustomSignupView.as_view(), name="account_signup"),
 ]
