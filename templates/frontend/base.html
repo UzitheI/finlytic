@@ -176,123 +176,70 @@ align-items: center;
         
 
     <!-- ====== Footer Start ====== -->
-    <footer class="ud-footer wow fadeInUp" data-wow-delay=".15s">
-      <div class="shape shape-1">
-        <img src="{% static 'frontend/assets/images/footer/shape-1.svg' %}" alt="shape" />
-      </div>
-      <div class="shape shape-2">
-        <img src="{% static 'frontend/assets/images/footer/shape-2.svg' %}" alt="shape" />
-      </div>
-      <div class="shape shape-3">
-        <img src="{% static 'frontend/assets/images/footer/shape-3.svg' %}" alt="shape" />
-      </div>
-      <div class="ud-footer-widgets">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-5 col-lg-6 col-md-8">
-              <div class="ud-widget">
-                <a href="/" class="ud-footer-logo">
-                  <img src="{% static 'frontend/assets/images/logo/logo-transp.png' %}" alt="logo" />
-                </a>
-                <p class="ud-widget-desc" style=" max-width: fit-content !important;">
-                  At our SMS service, we're dedicated to crafting exceptional digital experiences for brands and companies through the innovative use of technology. Our mission is to empower businesses to connect with their audience in meaningful ways, leveraging the power of SMS to deliver impactful communication solutions.
-                </p>
-              </div>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
-              <div class="ud-widget">
-                <h5 class="ud-widget-title">Features</h5>
-                <ul class="ud-widget-links">
-                  <li>
-                    <a href="javascript:void(0)">How it works</a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">Privacy policy</a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">Terms of service</a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">Refund policy</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
-              <div class="ud-widget">
-                <h5 class="ud-widget-title">Quick Links</h5>
-                <ul class="ud-widget-links">
-                  <li>
-                    <a href="#home" rel="nofollow noopner">Home
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#about" rel="nofollow noopner">About</a>
-                  </li>
-                  <li>
-                    <a href="#pricing" rel="nofollow noopner">Pricing</a>
-                  </li>
-                  <li>
-                    <a href="#contact" rel="nofollow noopner">Contact Us</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-8 col-sm-10">
-              <div class="ud-widget">
-                <h5 class="ud-widget-title">Partners</h5>
-                <ul class="ud-widget-brands">
-                  <li>
-                    <a href="https://ajnalab.com" rel="nofollow noopner" target="_blank">
-                      <img src="{% static 'frontend/assets/images/brands/ajna.png' %}" alt="ayroui" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://ecommercehtml.com/" rel="nofollow noopner" target="_blank">
-                      <img src="{% static 'frontend/assets/images/brands/RichTechSmall.png' %}" alt="ecommerce-html" />
-                    </a>
-                  </li>
-                  {%comment%}
-                  <li>
-                    <a href="https://graygrids.com/" rel="nofollow noopner" target="_blank">
-                      <img src="{% static 'frontend/assets/images/footer/brands/graygrids.svg' %}" alt="graygrids" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://lineicons.com/" rel="nofollow noopner" target="_blank">
-                      <img src="{% static 'frontend/assets/images/footer/brands/lineicons.svg' %}" alt="lineicons" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://uideck.com/" rel="nofollow noopner" target="_blank">
-                      <img src="{% static 'frontend/assets/images/footer/brands/uideck.svg' %}" alt="uideck" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://tailwindtemplates.co/" rel="nofollow noopner" target="_blank">
-                      <img src="{% static 'frontend/assets/images/footer/brands/tailwindtemplates.svg' %}" alt="tailwindtemplates" />
-                    </a>
-                  </li>
-                  {%endcomment%}
-                </ul>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-      <div class="ud-footer-bottom">
-        <div class="container">
-          <div class="row">
-              <p class="ud-footer-bottom-right">
-                <script>document.write(new Date().getFullYear())</script> © DICE SMS. All rights reserved.
-              </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- ====== Footer End ====== -->
+    <footer class="ud-footer wow fadeInUp" data-wow-delay=".15s"
+    style="display: flex; flex-direction: column; justify-content: flex-start; overflow: hidden;">
+    <div class="shape shape-1">
+      <img src="{% static 'frontend/assets/images/footer/shape-1.svg' %}" alt="shape" 
+           style="max-width: 100px; height: auto;" />
+    </div>
+    <div class="shape shape-2" style="flex-shrink: 1;">
+      <img src="{% static 'frontend/assets/images/footer/shape-2.svg' %}" alt="shape" 
+           style="max-width: 100px; height: auto;" />
+    </div>
+    <div class="shape shape-3">
+      <img src="{% static 'frontend/assets/images/footer/shape-3.svg' %}" alt="shape" 
+           style="max-width: 100px; height: auto;" />
+    </div>
+    <div class="ud-footer-widgets" style="flex-grow: 1;">
+      <div class="container" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+        <div class="row" style="flex: 1; min-width: 300px;">
+          <div class="col-xl-5 col-lg-6 col-md-8" style="display: flex; flex-direction: column;">
+            <div class="ud-widget">
+              <a href="/" class="ud-footer-logo">
+                <img src="{% static 'frontend/assets/images/logo/logo-transp.png' %}" alt="logo" 
+                     style="width: 80px; height: auto;" />
+              </a>
+              <p class="ud-widget-desc" 
+              style="max-width: fit-content !important; overflow-wrap: break-word;">
+             At our SMS service, we're dedicated to crafting exceptional digital experiences for brands and companies through the innovative use of technology.
+           </p>
+         </div>
+       </div>
 
+       <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6" style="flex: 1; min-width: 150px;">
+        <div class="ud-widget">
+          <h5 class="ud-widget-title">Features</h5>
+          <ul class="ud-widget-links">
+            <li><a href="javascript:void(0)">How it works</a></li>
+            <li><a href="javascript:void(0)">Privacy policy</a></li>
+            <li><a href="javascript:void(0)">Terms of service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6" style="flex: 1; min-width: 150px;">
+        <div class="ud-widget">
+          <h5 class="ud-widget-title">Quick Links</h5>
+          <ul class="ud-widget-links">
+            <li><a href="#home" rel="nofollow noopner">Home</a></li>
+            <li><a href="#about" rel="nofollow noopner">About</a></li>
+            <li><a href="#pricing" rel="nofollow noopner">Pricing</a></li>
+            <li><a href="#contact" rel="nofollow noopner">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer Bottom -->
+<div class="ud-footer-bottom" style="text-align: center; padding: 10px 0;">
+  <p>
+    <script>document.write(new Date().getFullYear())</script> © Finlytic. All rights reserved.
+  </p>
+</div>
+</footer>
+
+    <!-- ====== Footer End ====== -->
     <!-- ====== Back To Top Start ====== -->
     <a href="javascript:void(0)" class="back-to-top">
       <i class="lni lni-chevron-up"> </i>
@@ -324,7 +271,6 @@ align-items: center;
           window.pageYOffset ||
           document.documentElement.scrollTop ||
           document.body.scrollTop;
-
         for (let i = 0; i < sections.length; i++) {
           const currLink = sections[i];
           const val = currLink.getAttribute("href");
