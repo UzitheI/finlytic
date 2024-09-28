@@ -21,15 +21,15 @@
                                 </thead>
                                 <tbody>
 
+                                    {% for item in items%}
                                         <tr>
-                                            {% for item in items%}
                                             <td><strong>{{item.id}}</strong></td>
                                             <td>{{ item.user.name }}</td>
                                             <td>{{ item.query }}</td>
                                             <td>{{ item.excel_file.url}}</td>
                                             <td>{{ item.sent_date }}</td>
-                                            {% endfor %}
                                         </tr>
+                                        {% endfor %}
                                 </tbody>
                             </table>
                         </div>
