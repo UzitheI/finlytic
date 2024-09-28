@@ -6,7 +6,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Finlytic| Do Your Taxes Responsibly</title>
+    <title>
+      Finlytic| Do Your Taxes Responsibly</title>
 
     <!-- Primary Meta Tags -->
     <meta name="title" content="Finlytic| Do Your Taxes Responsibly">
@@ -39,10 +40,11 @@ align-items: center;
 }
 
 /* Adjust margins for the buttons */
-.navbar-btn a {
-margin-left: 10px;
+/* 
+.navbar-btn a { 
+  margin-left: 10px;
 }
-
+*/
 /* Responsive adjustments */
 @media (max-width: 991px) {
 .navbar-collapse {
@@ -65,8 +67,11 @@ margin-left: 10px;
   display: none;
 }
 }
-
-  </style>
+.ud-main-btn{
+  background-color: #E6AF2E;
+}
+    </style>
+  </head>
 
   <body>
     <!-- ====== Header Start ====== -->
@@ -74,37 +79,65 @@ margin-left: 10px;
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-lg" 
+            style="display: flex; 
+            justify-content: space-between;
+             align-items: center;">
               <a class="navbar-brand" href="/">
-                <img src="{% static 'frontend/assets/images/logo/logo-transp.png' %}" alt="Logo" style="width: 100px; height: auto;" />
+                <img src="{% static 'frontend/assets/images/logo/logo-transp.png' %}" alt="Logo" 
+     style="width: 100px; 
+     height: auto;" 
+       />
               </a>              
               <button class="navbar-toggler">
                 <span class="toggler-icon"> </span>
                 <span class="toggler-icon"> </span>
                 <span class="toggler-icon"> </span>
               </button>
-              <div class="navbar-collapse">
-                <ul id="nav" class="navbar-nav mx-auto">
+          <div class="navbar-collapse" 
+              style="display: flex;
+              justify-content: space-between;
+              align-items: center;
+              width: 100%;">
+                <ul id="nav" class="navbar-nav " 
+                style="flex-grow: 1; 
+                justify-content: center;">
                   <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#home">Home</a>
+                    <a class="ud-menu-scroll" href="#home">
+                      Home
+                    </a>
                   </li>
                   <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#about">About</a>
+                    <a class="ud-menu-scroll" href="#about">
+                      About
+                    </a>
                   </li>
                   <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#pricing">Pricing</a>
+                    <a class="ud-menu-scroll" href="#pricing">
+                      Pricing
+                    </a>
                   </li>
                   <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#contact">Contact</a>
+                    <a class="ud-menu-scroll" href="#contact">
+                      Contact
+                    </a>
                   </li>
                 </ul>
+                <div class="navbar-btn"
+                style="display: flex;
+              align-items: center;">
                   {% if not user.is_authenticated %}
                   <ul class="navbar-nav d-flex navbar-btn">
                     <li class="nav-item">
-                      <a href="{% url 'account_login' %}" class="ud-main-btn">Sign In</a>
+                      <a href="{% url 'account_login' %}" 
+                      class="ud-main-btn">
+                        Sign In
+                      </a>
                     </li>
                     <li class="nav-item">
-                      <a href="{% url 'account_signup' %}" class="ud-main-btn">Sign Up</a>
+                      <a href="{% url 'account_signup' %}" 
+                      class="ud-main-btn">
+                        Sign Up</a>
                     </li>
                   </ul>
                   {% else %}
@@ -118,6 +151,7 @@ margin-left: 10px;
                   </ul>
                   {% endif %}
               </div>
+            </div>
               
             </nav>
           </div>
@@ -178,6 +212,9 @@ margin-left: 10px;
                   <li>
                     <a href="javascript:void(0)">Terms of service</a>
                   </li>
+                  <li>
+                    <a href="javascript:void(0)">Refund policy</a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -201,6 +238,46 @@ margin-left: 10px;
                 </ul>
               </div>
             </div>
+            <div class="col-xl-3 col-lg-6 col-md-8 col-sm-10">
+              <div class="ud-widget">
+                <h5 class="ud-widget-title">Partners</h5>
+                <ul class="ud-widget-brands">
+                  <li>
+                    <a href="https://ajnalab.com" rel="nofollow noopner" target="_blank">
+                      <img src="{% static 'frontend/assets/images/brands/ajna.png' %}" alt="ayroui" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://ecommercehtml.com/" rel="nofollow noopner" target="_blank">
+                      <img src="{% static 'frontend/assets/images/brands/RichTechSmall.png' %}" alt="ecommerce-html" />
+                    </a>
+                  </li>
+                  {%comment%}
+                  <li>
+                    <a href="https://graygrids.com/" rel="nofollow noopner" target="_blank">
+                      <img src="{% static 'frontend/assets/images/footer/brands/graygrids.svg' %}" alt="graygrids" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://lineicons.com/" rel="nofollow noopner" target="_blank">
+                      <img src="{% static 'frontend/assets/images/footer/brands/lineicons.svg' %}" alt="lineicons" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://uideck.com/" rel="nofollow noopner" target="_blank">
+                      <img src="{% static 'frontend/assets/images/footer/brands/uideck.svg' %}" alt="uideck" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://tailwindtemplates.co/" rel="nofollow noopner" target="_blank">
+                      <img src="{% static 'frontend/assets/images/footer/brands/tailwindtemplates.svg' %}" alt="tailwindtemplates" />
+                    </a>
+                  </li>
+                  {%endcomment%}
+                </ul>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>

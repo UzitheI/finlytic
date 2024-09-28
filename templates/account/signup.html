@@ -4,13 +4,34 @@
 <style>
     #nav {
         display: none;
+color: #E6AF2E;
+
         /* Hide the menu */
     }
 
     .sticky .navbar {
         padding: 10px;
     }
-    
+     .personal-info { 
+            font-weight: bolder;
+            color: #012622;
+            transition: all 0.3s ease;
+        }
+
+        .personal-info:hover {
+            font-weight: bold;
+            color: #E6AF2E;
+        }
+            
+        /* input::placeholder{ 
+            font-weight: bold;
+            color: #E6AF2E;
+            transition: all 0.3s ease;
+        }
+        placeholder:hover{
+            font-weight: normal;
+            color: #012622;
+        }*/
 </style>
 {%endblock%}
 {% load i18n %}
@@ -19,12 +40,14 @@
 {% block content %}
 
 <!-- ====== Banner Start ====== -->
-<section class="ud-page-banner">
-    <div class="container">
+<section class="ud-page-banner" style="background-color:#012622;">
+        <div class="container" >
         <div class="row">
             <div class="col-lg-12">
                 <div class="ud-banner-content">
-                    <h1>दर्ता गर्नुहोस्</h1>
+                    <h1 style="color: #E6AF2E; ">
+                        दर्ता गर्नुहोस्
+                    </h1>
                 </div>
             </div>
         </div>
@@ -39,8 +62,9 @@
             <div class="col-lg-12">
                 <div class="ud-login-wrapper" style="max-width: 50em;">
                     <div class="ud-login-logo">
-                        <img src="{% static 'frontend/assets/images/logo/logo-transp.png' %}" alt="logo"
-                            style=" width: 15em; " />
+                        <img src="{% static 'frontend/assets/images/logo/logo-transp.png' %}" alt="logo" 
+                        style="width: 10em; transform: translateY(-70px);" />
+
                     </div>
 
                     {% if messages %}
@@ -54,9 +78,11 @@
 
                     <form class="ud-login-form" id="signup_form" method="post" action="{% url 'account_signup' %}">
                         {% csrf_token %}
-                        <div id="userRegistration">
+                        <div id="userRegistration" >
                             <hr>
-                            <p>Personal Information</p>&nbsp;
+                            <p class="personal-info">
+                                Personal Information
+                            </p>&nbsp;
                             <div class="ud-form-group">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -165,7 +191,9 @@
                         </div>
 
                         <div class="ud-form-group">
-                            <button type="submit" class="ud-main-btn w-100">Sign Up</button>
+                            <button type="submit" class="ud-main-btn w-100">
+                                Sign Up
+                            </button>
                         </div>
                     </form>
 
