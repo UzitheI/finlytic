@@ -94,12 +94,12 @@ WSGI_APPLICATION = 'finlytic_web.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'defaultdb',
-        'USER': 'avnadmin',
-        'PASSWORD': 'AVNS_hnsFamn50TCdlvF77iD',
-        'HOST': 'finlytic1-ujjwalpuri221-af80.j.aivencloud.com',
-        'PORT': 16161
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'finlytic',
+        'USER': 'uziP',
+        'PASSWORD': 'ujjwal12345678910',
+        'HOST': 'localhost',
+        'PORT': 3306
     }
 }
 
@@ -127,6 +127,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+
+# In settings.py
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 
 TIME_ZONE = 'UTC'
 
