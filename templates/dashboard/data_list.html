@@ -6,44 +6,29 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title mb-4" style="margin-top:20px;">List of Taxes to be Paid</h4>
+                <h4 class="card-title mb-4" style="margin-top:20px;">List of Data You Have Shared</h4>
 
                         <div class="table-responsive">
                             <table class="table table-centered table-nowrap mb-0">
                                 <thead>
                                     <tr>
                                         <th scope="col">Sn No.</th>
-                                        <th scope="col">Deadline Date</th>
-                                        <th scope="col">Detail</th>
-                                        <th scope="col">Location</th>
-                                        <th scope="col">Total Amount</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Action</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Query</th>
+                                        <th scope="col">Excel File</th>
+                                        <th scope="col">Date</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+
                                         <tr>
-                                            <td><strong>#AD{{item.id}}</strong></td>
-                                            <td>{{ item.ad_title }}</td>
-                                            <td>Rs. {{ item.rent }}</td>
-                                            <td>{{ item.ad_description | truncatechars:25}}</td>
-                                            <td>{{ item.location }}</td>
-                                            <td>
-                                                {% if item.bike_parking %}
-                                                    <i class="mdi mdi-checkbox-blank-circle text-success me-1"></i>
-                                                {% else %}
-                                                    <i class="mdi mdi-checkbox-blank-circle text-warning me-1"></i>
-                                                {% endif %}
-                                                /
-                                                {% if item.car_parking %}
-                                                    <i class="mdi mdi-checkbox-blank-circle text-success me-1"></i>
-                                                {% else %}
-                                                    <i class="mdi mdi-checkbox-blank-circle text-warning me-1"></i>
-                                                {% endif %}
-                                            </td>
-                                            <td>{{ item.price_negotiable }}</td>
-                                            <td>
-                                            </td>
+                                            {% for item in items%}
+                                            <td><strong>{{item.id}}</strong></td>
+                                            <td>{{ item.user.name }}</td>
+                                            <td>{{ item.query }}</td>
+                                            <td>{{ item.excel_file.url}}</td>
+                                            <td>{{ item.sent_date }}</td>
+                                            {% endfor %}
                                         </tr>
                                 </tbody>
                             </table>
