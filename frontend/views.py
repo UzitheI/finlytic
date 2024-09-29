@@ -7,6 +7,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.http import Http404, HttpResponseRedirect, HttpResponse, JsonResponse
+from django.contrib.auth.mixins import LoginRequiredMixin
 class IndexView(CreateView):
     model = ContactModel
     form_class = ContactForm
@@ -22,7 +23,7 @@ class IndexView(CreateView):
         # No need to add the form again; it's already part of the context
         return context
 
-class ChatTemplate(CreateView):
+class ChatTemplate(LoginRequiredMixin,CreateView):
     model= ChatModel
     form_class= ChatInput
     template_name='frontend/chatbot.html'

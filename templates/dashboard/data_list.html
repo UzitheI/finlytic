@@ -21,7 +21,6 @@
                                 </thead>
                                 <tbody>
 
-<<<<<<< HEAD
                                     {% for item in items%}
                                         <tr>
                                             <td><strong>{{item.id}}</strong></td>
@@ -29,16 +28,6 @@
                                             <td>{{ item.query }}</td>
                                             <td>{{ item.excel_file.url}}</td>
                                             <td>{{ item.sent_date }}</td>
-=======
-                                        <tr>
-                                            {% for item in items%}
-                                            <td><strong>#AD{{item.id}}</strong></td>
-                                            <td>{{ item.user.name }}</td>
-                                            <td>Rs. {{ item.query }}</td>
-                                            <td>{{ item.excel_file.url}}</td>
-                                            <td>{{ item.sent_date }}</td>
-                                            {% endfor %}
->>>>>>> a6ef30a6c51ec448ca7f80ebd77ff859cddde9c6
                                         </tr>
                                         {% endfor %}
                                 </tbody>
