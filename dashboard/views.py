@@ -36,28 +36,27 @@ class DashboardIndex(ListView):
         context = super().get_context_data(**kwargs)
         
         today = date.today()
-        if today > date(today.year, 6, 30):
-            target_year = today.year + 1 
-        else:
-            target_year = today.year 
+        # Set the target year to June 26, 2025, as per your request
+        target_date = date(2024, 10, 1)
         
-        june_30_next_year = date(target_year, 6, 30)
-        date_diff = (june_30_next_year - today).days
+        # Calculate the difference in days between today and the target date
+        date_diff = (target_date - today).days
     
         context["date_till_tax"] = date_diff
         
-        context["users_with_deadlines"] = date_diff < 10
-        
         context["items"] = DataInput.objects.filter(user=personal_user) 
         
+        # Send an email if there are less than 10 days remaining
         if date_diff < 10:
+            context["users_with_deadlines"] = True
             self.send_deadline_email(personal_user, date_diff)
         
         return context
     
     def send_deadline_email(self, user, days_left):
+        personal_user=self.request.user
         subject = "Tax Deadline Alert: Less than 10 Days Left!"
-        message = f"Dear {user.first_name},\n\nThere are only {days_left} days left until the tax deadline on June 30. Please make sure to complete any pending tasks.\n\nBest regards,\nYour Company"
+        message = f"Dear Customer,\n\nThere are only {days_left} days left until the tax deadline on June 26, 2025. Please make sure to complete any pending tasks.\n\nBest regards,\nFinlytic"
         
         recipient_email = user.email
         
@@ -69,6 +68,7 @@ class DashboardIndex(ListView):
             [recipient_email], 
             fail_silently=False,
         )
+
 
     
 
