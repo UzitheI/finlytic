@@ -71,85 +71,61 @@ align-items: center;
   </head>
 
   <body>
-    <!-- ====== Header Start ====== -->
-    <header class="ud-header">
-      <div class="container">
-        <div class="row">
+<!-- ====== Header Start ====== -->
+<header class="ud-header">
+  <div class="container">
+      <div class="row">
           <div class="col-lg-12">
-            <nav class="navbar navbar-expand-lg" 
-            style="display: flex; 
-            justify-content: space-between;
-             align-items: center;">
-              <a class="navbar-brand" href="/">
-                <img src="{% static 'frontend/assets/images/logo/logo-transp.png' %}" alt="Logo" 
-     style="width: 100px; 
-     height: auto;" 
-       />
-              </a>              
-              <button class="navbar-toggler">
-                <span class="toggler-icon"> </span>
-                <span class="toggler-icon"> </span>
-                <span class="toggler-icon"> </span>
-              </button>
-          <div class="navbar-collapse" 
-              style="display: flex;
-              justify-content: space-between;
-              align-items: center;
-              width: 100%;">
-                <ul id="nav" class="navbar-nav " 
-                style="flex-grow: 1; 
-                justify-content: center;">
-                  <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#home">
-                      Home
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#about">
-                      About
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#contact">
-                      Contact
-                    </a>
-                  </li>
-                </ul>
-                <div class="navbar-btn"
-                style="display: flex;
-              align-items: center;">
-                  {% if not user.is_authenticated %}
-                  <ul class="navbar-nav d-flex navbar-btn">
-                    <li class="nav-item">
-                      <a href="{% url 'account_login' %}" 
-                      class="ud-main-btn">
-                        Sign In
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="{% url 'account_signup' %}" 
-                      class="ud-main-btn">
-                        Sign Up</a>
-                    </li>
-                  </ul>
-                  {% else %}
-                  <ul class="navbar-nav d-flex navbar-btn">
-                    <li class="nav-item">
-                      <a href="{% url 'dashboard:dashboard'%}" class="ud-main-btn">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="{% url 'account_logout' %}" class="ud-main-btn">Logout</a>
-                    </li>
-                  </ul>
-                  {% endif %}
-              </div>
-            </div>
-              
-            </nav>
+              <nav class="navbar navbar-expand-lg" style="display: flex; justify-content: space-between; align-items: center;">
+                  <a class="navbar-brand" href="/">
+                      <img src="{% static 'frontend/assets/images/logo/logo-transp.png' %}" alt="Logo" style="width: 100px; height: auto;" />
+                  </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="toggler-icon"> </span>
+                      <span class="toggler-icon"> </span>
+                      <span class="toggler-icon"> </span>
+                  </button>
+
+                  <div class="collapse navbar-collapse" id="navbarNav" style="flex-grow: 1; justify-content: center; align-items: center;">
+                      <ul id="nav" class="navbar-nav" style="flex-grow: 1; justify-content: center;">
+                          <li class="nav-item">
+                              <a class="ud-menu-scroll nav-link" href="#home">Home</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="ud-menu-scroll nav-link" href="#about">About</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="ud-menu-scroll nav-link" href="#contact">Contact</a>
+                          </li>
+                      </ul>
+                      <div class="navbar-btn" style="display: flex; align-items: center;">
+                          {% if not user.is_authenticated %}
+                          <ul class="navbar-nav d-flex navbar-btn">
+                              <li class="nav-item">
+                                  <a href="{% url 'account_login' %}" class="ud-main-btn">Sign In</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="{% url 'account_signup' %}" class="ud-main-btn">Sign Up</a>
+                              </li>
+                          </ul>
+                          {% else %}
+                          <ul class="navbar-nav d-flex navbar-btn">
+                              <li class="nav-item">
+                                  <a href="{% url 'dashboard:dashboard' %}" class="ud-main-btn">Dashboard</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="{% url 'account_logout' %}" class="ud-main-btn">Logout</a>
+                              </li>
+                          </ul>
+                          {% endif %}
+                      </div>
+                  </div>
+              </nav>
           </div>
-        </div>
       </div>
-    </header>
+  </div>
+</header>
+
     <!-- ====== Header End ====== -->
 
     {% comment %} {% if messages %}
