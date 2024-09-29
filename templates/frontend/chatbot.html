@@ -149,29 +149,43 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        // Function to type words one by one with a delay
-        function typeText(element, text, delay = 300) {
+        function typeText(element, text, delay = 100) {
             const words = text.split(' ');
             let index = 0;
     
-            // Function to add one word at a time
             function addWord() {
                 if (index < words.length) {
                     element.innerHTML += words[index] + ' ';
                     index++;
-                    setTimeout(addWord, delay); // Recursive call to add the next word after the delay
+                    setTimeout(addWord, delay); 
                 }
             }
     
-            addWord(); // Start the typing effect
+            addWord();
         }
     
-        // When the page is loaded, start typing the summary
         document.addEventListener("DOMContentLoaded", function() {
             const summaryText = document.getElementById('summary-text');
-            const fullText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, quibusdam recusandae quas ab dolore voluptatibus nemo veniam quidem mollitia doloremque deleniti minus neque, consectetur sapiente cum fugiat? Asperiores, quasi blanditiis.";
+           const fullText = `Expense Overview: 
+
+            Total Expenses: NPR 75,112,605.00
+            Average Expense: NPR 150,225.21
+            Highest Expense: NPR 299,886.00
+            Lowest Expense: NPR 5,849.00
+
+            Business Type Breakdown:
+            Unknown: 500
+
+            Top 5 Expenses:
+            Description               Amount
+            Delivery charges                    299886
+            Annual software license             298670
+            Delivery charges                    297715
+            Training for employees              297626
+            Annual software license              296169`;
+
     
-            typeText(summaryText, fullText, 200); // Typing effect with 200ms delay between words
+            typeText(summaryText, fullText, 200); 
         });
     </script>
     <script>
