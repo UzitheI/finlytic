@@ -104,6 +104,10 @@
                         success: function(response) {
                             form[0].reset();
                             console.log('Input successfully posted to the database.');
+    
+                            // Simulate response generation
+                            const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                            addMessage(randomResponse, false); // Display the random response
                         },
                         error: function(xhr, status, error) {
                             console.error('An error occurred while posting the data:', error);
@@ -113,6 +117,70 @@
                     console.log('Only POST requests are allowed.');
                 }
             });
+        });
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatMessages = document.getElementById('chat-messages');
+            const messageInput = document.getElementById('message-input');
+            const sendButton = document.getElementById('send-button');
+    
+            const responses = [
+                "It's essential for small and mid-scale businesses in Nepal to maintain accurate records of all income and expenses to comply with the Inland Revenue Department's regulations.",
+                "Ensure you file your tax returns on time to avoid penalties and interest charges. In Nepal, the deadline for income tax returns is usually the end of Shrawan.",
+                "Keeping receipts for business expenses can greatly help you during tax season. Make sure to organize them properly for easy reference.",
+                "Consider taking advantage of available deductions. Business-related expenses such as rent, utilities, and employee salaries can often reduce your taxable income.",
+                "Be aware of tax credits available for small businesses in Nepal, such as those for investments in certain sectors or regions.",
+                "If you operate a home-based business, document any home office expenses; you might be eligible for deductions that can lower your taxable income.",
+                "If you're self-employed or have income not subject to withholding, remember to make estimated tax payments quarterly to avoid penalties.",
+                "To avoid compliance issues, ensure you are paying enough in estimated taxes throughout the fiscal year. Regularly review your financials.",
+                "Don’t forget to consider local taxes, as compliance requirements can vary significantly by municipality in Nepal.",
+                "If you operate in multiple regions, you might need to comply with local tax regulations in each area. Always check local laws.",
+                "Maintain organized records for at least five years, which is typically the period the tax authorities can audit your tax return in Nepal.",
+                "Using accounting software tailored for Nepalese businesses can simplify tax preparation and help you keep organized records.",
+                "Your choice of business structure (e.g., sole proprietorship, partnership, private limited company) can impact your tax obligations. Choose one that aligns with your growth plans.",
+                "Consider consulting with a local tax advisor who understands the nuances of Nepal's tax system to help you navigate your tax obligations effectively.",
+                "Stay updated on any changes in tax laws that may affect your business. Engage with local business associations to receive relevant updates.",
+                "Selecting the correct filing status is crucial. Understand the implications of being a sole proprietor versus operating as a private limited company.",
+                "If selected for an audit, stay calm and prepare by gathering all relevant documentation to support your claims to the tax authorities.",
+                "Responding promptly to any inquiries from the Inland Revenue Department can help resolve issues more efficiently and avoid penalties.",
+                "If your tax situation is complex, especially with VAT and service tax regulations, consider hiring a certified tax professional for personalized guidance.",
+                "Using mobile accounting applications can help you keep track of your finances on the go, which is especially useful for small business owners."
+            ];
+    
+            function addMessage(content, isUser = true) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('d-flex', 'mb-4', isUser ? 'justify-content-end' : 'justify-content-start');
+                
+                const messageBubble = document.createElement('div');
+                messageBubble.classList.add('p-3', 'rounded', isUser ? 'bg-primary' : 'bg-light');
+                messageBubble.style.maxWidth = '70%';
+                messageBubble.textContent = content;
+    
+                messageDiv.appendChild(messageBubble);
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+    
+            sendButton.addEventListener('click', function() {
+                const message = messageInput.value.trim();
+                if (message) {
+                    addMessage(message, true);
+                    messageInput.value = '';
+    
+                    // Generate a random response from the responses array
+                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                    setTimeout(() => addMessage(randomResponse, false), 1000); // Simulate response delay
+                }
+            });
+    
+            messageInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendButton.click();
+                }
+            });
+    
+            // Initial greeting message
+            addMessage("Hello! How can I help you today?", false);
         });
     </script>
     <script>
