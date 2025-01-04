@@ -3,3 +3,7 @@
 __pycache__
 media
 Dockerfile
+.terraform
+.terraform.lock.hcl
+
+terraform.tfstate
